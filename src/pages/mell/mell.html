@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      商城
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="mell-content">
+  <ion-slides #myslides pager="true" autoplay="1000" speed="2500" class="mell-slides">
+    <ion-slide *ngFor="let slide of slides2">
+      <img [src]="slide.image" alt="">
+    </ion-slide>
+  </ion-slides>
+  <ion-grid class="mell-grid-btn">
+    <ion-row>
+      <ion-col width-50>
+        <img src="assets/img/mell/CustomMade1.png" alt="">
+      </ion-col>
+      <ion-col width-50>
+        <img src="assets/img/mell/ArtDerivatives2.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-50>
+        <img src="assets/img/mell/OriginalArt1.png" alt="">
+      </ion-col>
+      <ion-col width-50>
+        <img src="assets/img/mell/CreditsExchange2.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-list-header class="list-header">
+      <img src="assets/img/card/triangle.png" class="triangle">
+      <span>艺术衍生</span>
+      <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
+      <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
+    </ion-list-header>
+    <ion-grid class="mell-list-grid">
+      <ion-row *ngFor="let mellthing of mellthings">
+        <ion-col width-50>
+          <img [src]="mellthing.image.first">
+        </ion-col>
+        <ion-col width-50>
+          <img [src]="mellthing.image.second">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+
+
+
+
+</ion-content>

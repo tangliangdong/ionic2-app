@@ -1,0 +1,72 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="home-content">
+  <!-- 轮播图 -->
+  <ion-slides class="home-slides" pager="true" loop="true" autoplay="1000" speed="2500">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-fab top right>
+    <button ion-fab mini color="dark"><ion-icon name="search"></ion-icon></button>
+  </ion-fab>
+
+  <!-- 中间四个按钮 -->
+  <ion-item class="home-center-buttons">
+    <ion-row>
+      <ion-col width-25>
+        <button clear class="four-btn" (click)="limitActivity()">
+          <img src="assets/img/button/artist.png" alt="">
+          <p>艺术家</p>
+        </button>
+      </ion-col>
+      <ion-col width-25>
+        <button clear class="four-btn" (click)="text()">
+          <img src="assets/img/button/live.png" alt="">
+          <p>直播</p>
+        </button>
+      </ion-col>
+      <ion-col width-25>
+        <button clear class="four-btn">
+          <img src="assets/img/button/read.png" alt="">
+          <p>阅读</p>
+        </button>
+      </ion-col>
+      <ion-col width-25>
+        <button clear class="four-btn">
+          <img src="assets/img/button/diy.png" alt="">
+          <p>定制</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <ion-list class="home-list">
+    <ion-card class="card">
+      <ion-item>
+        <img src="assets/img/card/triangle.png" class="triangle" alt="">
+        <span class="card-title">展览推荐</span>
+        <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
+        <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
+      </ion-item>
+      <ion-slides class="card-slides">
+        <ion-slide *ngFor="let card of cards">
+          <img [src]="card.image" class="card-image"/>
+        </ion-slide>
+      </ion-slides>
+      <ion-card-content>
+        <ion-card-title>
+          WOLF-王野夫
+        </ion-card-title>
+        <p>艾米李画廊 | 北京</p>
+        <p>2017.02.17-03.19</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,131 @@
+page-artist{
+
+  .artist-header>ion-toolbar{
+    border-top: 1.4px solid #eee;
+  }
+  .artist-header>.toolbar>.toolbar-background{
+    border-color: #eee;
+  }
+
+  .segment-ios{
+    .segment-button {
+      color: #c7c6c6;
+      background-color: transparent;
+      border: 0;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+      // border-bottom: 1px solid;
+      span{
+        border-bottom: 1.6px solid #000;
+      }
+    }
+  }
+
+  .segment-md{
+    .segment-button {
+      color: #c7c6c6;
+      background-color: #transparent;
+      border: 0;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      border-radius: 0px;
+      // border-bottom: 2px solid;
+    }
+  }
+  .segment{
+    .segment-button{
+      font-size: 1.6rem;
+
+    }
+    span{
+      width: 50px;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+
+    }
+  }
+
+  .artist-content{
+    .artist-segment-page>.list>.recommended-item:first-child,
+    .artist-segment-page>.list>.img-scroll{
+      border: none;
+    }
+    .artist-segment-page>.list>.item{
+      padding-left: 0px;
+    }
+    .recommended-item>.item-inner{
+      border: none;
+    }
+    .artist-segment-page{
+      .input-wrapper>.label{
+        margin: 6px 0px 6px 0;
+      }
+      .list>.item>.item-inner{
+        padding-right: 0;
+      }
+      .list > .item-block:last-child, .list > .item-wrapper:last-child .item-block {
+          border-bottom: none;
+      }
+    }
+    .recommended-item{
+      border: none;
+      img{
+        width: 5rem;
+        height: 5rem;
+      }
+      .information>p{
+        font-size: 1.5rem;
+        color: #a3a9c8;
+
+      }
+      .information>span{
+        font-size: 1rem;
+        color: #b0b0b0;
+      }
+    }
+
+    .img-scroll{
+      ion-scroll{
+        height: 100px;
+      }
+      .item-inner{
+        border: none;
+      }
+      img+img{
+        margin-left: 10px;
+      }
+    }
+
+    .ranking-page{
+      .recommended-item>ion-avatar{
+        margin: 8px 16px 8px 8px;
+      }
+      .recommended-item{
+        .label-logo{
+          width: 20px;
+          height: auto;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .list-ios .item-block .item-inner{
+    border: none;
+  }
+
+}

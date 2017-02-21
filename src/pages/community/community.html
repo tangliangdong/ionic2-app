@@ -1,0 +1,222 @@
+<ion-header>
+  <!-- <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar> -->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="communication" class="segment">
+      <ion-segment-button value="recommended">
+        <span>推荐</span>
+      </ion-segment-button>
+      <ion-segment-button value="news">
+        <span>最新</span>
+      </ion-segment-button>
+      <ion-segment-button value="attention">
+        <span>关注</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <button ion-button class="write-btn">
+    <img src="assets/img/button/write.png" alt="">
+  </button>
+</ion-header>
+
+<!-- 正文主体 -->
+<ion-content class="community-content">
+  <div [ngSwitch]="communication">
+
+    <!-- 推荐 列表 -->
+    <ion-list *ngSwitchCase="'recommended'">
+      <ion-grid class="top-grid">
+        <ion-row>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/ikon.png" alt="">
+            </button>
+          </ion-col>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/painting.png" alt="">
+            </button>
+          </ion-col>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/creative.png" alt="">
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/photography.png" alt="">
+            </button>
+          </ion-col>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/indoor.png" alt="">
+            </button>
+          </ion-col>
+          <ion-col width-33>
+            <button ion-button>
+              <img src="assets/img/button/sculpture.png" alt="">
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item class="community-item" *ngFor="let recommend_item of recommend_items">
+        <ion-item class="item-head">
+          <ion-avatar item-left class="community-avatar">
+            <img [src]="recommend_item.avatar">
+          </ion-avatar>
+          <p class="username" color="username" [innerHTML]="recommend_item.user"></p>
+          <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
+        </ion-item>
+
+        <p class="signature" color="dark" [innerHTML]="recommend_item.signatue"></p>
+
+        <ion-grid class="list-grid" id="list-grid">
+          <ion-row *ngFor="let row of recommend_item.images">
+            <ion-col width-33>
+              <img [src]="row.a" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.b" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.c" alt="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item class="item-footer">
+          <div class="thumbs">
+            <button>
+              <img src="assets/img/button/praise.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="recommend_item.thumbsNum"></span>
+          </div>
+          <div class="comments-icon">
+            <button>
+              <img src="assets/img/button/comments.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="recommend_item.commentNum"></span>
+          </div>
+
+          <span class="public-time" color="comment" [innerHTML]="recommend_item.addTime" item-right></span>
+        </ion-item>
+        <ion-list class="comments-list">
+          <div *ngFor="let comment of recommend_item.comments" class="comments-list-div">
+            <button color="commentuser">{{comment.user}}：</button>
+            <span color="comment" [innerHTML]="comment.word"></span>
+          </div>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+
+
+    <!-- 最新 列表 -->
+    <ion-list *ngSwitchCase="'news'" >
+      <ion-item class="community-item" *ngFor="let news_item of news_items">
+        <ion-item class="item-head">
+          <ion-avatar item-left class="community-avatar">
+            <img [src]="news_item.avatar" class="community-avatar-img">
+          </ion-avatar>
+          <p class="username" color="username" [innerHTML]="news_item.user"></p>
+          <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
+        </ion-item>
+
+        <p class="signature" color="dark" [innerHTML]="news_item.signatue"></p>
+
+        <ion-grid class="list-grid" id="list-grid">
+          <ion-row *ngFor="let row of news_item.images">
+            <ion-col width-33>
+              <img [src]="row.a" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.b" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.c" alt="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item class="item-footer">
+          <div class="thumbs">
+            <button>
+              <img src="assets/img/button/praise.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="news_item.thumbsNum"></span>
+          </div>
+          <div class="comments-icon">
+            <button>
+              <img src="assets/img/button/comments.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="news_item.commentNum"></span>
+          </div>
+
+          <span class="public-time" color="comment" [innerHTML]="news_item.addTime" item-right></span>
+        </ion-item>
+        <ion-list class="comments-list">
+          <div *ngFor="let comment of news_item.comments" class="comments-list-div">
+            <button color="commentuser">{{comment.user}}：</button>
+            <span color="comment" [innerHTML]="comment.word"></span>
+          </div>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+
+
+    <!-- 关注 列表 -->
+    <ion-list *ngSwitchCase="'attention'">
+      <ion-item class="community-item" *ngFor="let attention_item of attention_items">
+        <ion-item class="item-head">
+          <ion-avatar item-left class="community-avatar">
+            <img [src]="attention_item.avatar" class="community-avatar-img">
+          </ion-avatar>
+          <p class="username" color="username" [innerHTML]="attention_item.user"></p>
+          <button ion-button item-right small color="dark" class="focus-btn">关注</button>
+        </ion-item>
+
+        <p class="signature" color="dark" [innerHTML]="attention_item.signatue"></p>
+
+        <ion-grid class="list-grid" id="list-grid">
+          <ion-row *ngFor="let row of attention_item.images">
+            <ion-col width-33>
+              <img [src]="row.a" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.b" alt="">
+            </ion-col>
+            <ion-col width-33>
+              <img [src]="row.c" alt="">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item class="item-footer">
+          <div class="thumbs">
+            <button>
+              <img src="assets/img/button/praise.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="attention_item.thumbsNum"></span>
+          </div>
+          <div class="comments-icon">
+            <button>
+              <img src="assets/img/button/comments.png" alt="">
+            </button>
+            <span color="comment" [innerHTML]="attention_item.commentNum"></span>
+          </div>
+
+          <span class="public-time" color="comment" [innerHTML]="attention_item.addTime" item-right></span>
+        </ion-item>
+        <ion-list class="comments-list">
+          <div *ngFor="let comment of attention_item.comments" class="comments-list-div">
+            <button color="commentuser">{{comment.user}}：</button>
+            <span color="comment" [innerHTML]="comment.word"></span>
+          </div>
+        </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,51 @@
+page-mell {
+  .mell-content{
+    .mell-slides{
+      height: auto;
+
+      .swiper-pagination-bullet-active {
+        background: white;
+      }
+    }
+
+    .mell-grid-btn{
+      padding: 0;
+      ion-col{
+        padding: 0;
+      }
+      ion-col+ion-col{
+        margin: 0 0 0 3px;
+      }
+
+    }
+
+    .list-header{
+      border: none;
+
+      span{
+        font-size: 14px;
+      }
+    }
+    .mell-list-grid{
+      padding: 0;
+
+      ion-col{
+        height: 15rem;
+        position: relative;
+        background-color: #eee;
+      }
+      ion-col+ion-col{
+        margin: 0 0 0 3px;
+      }
+      img{
+        position: absolute;
+        width: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+  }
+
+}

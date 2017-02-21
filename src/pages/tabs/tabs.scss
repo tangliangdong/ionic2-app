@@ -1,0 +1,50 @@
+
+.ion-tab-icon-base {
+  min-width: 24px;
+  height: 30px;
+  padding: 4px 4px 2px;
+}
+
+.base-tabs{
+  .tab-button[aria-selected=true] {
+      color: #000000;
+  }
+}
+
+
+.ion-tab-icon-md-base {
+  min-width: 24px !important;
+  height: 30px;
+}
+.tabs-ios .tab-button-icon{
+  min-width: 24px;
+}
+
+$tabImageName: 'HomePage' 'community' 'mell' 'person1';
+@for $i from 1 to 5 {
+  //for ios
+  .ion-ios-tab-#{nth($tabImageName, $i)} {
+    @extend .ion-tab-icon-base;
+    content: url("../assets/img/tabs/#{nth($tabImageName, $i)}_touch.png");
+  }
+  .ion-ios-tab-#{nth($tabImageName, $i)}-outline {
+    @extend .ion-tab-icon-base;
+    content: url("../assets/img/tabs/#{nth($tabImageName, $i)}.png");
+  }
+
+  // for android
+  // 点击后显示的logo
+  .tabs-md .tab-button[aria-selected=true] {
+    .ion-md-tab-#{nth($tabImageName, $i)} {
+      @extend .ion-tab-icon-md-base;
+      content: url("../assets/img/tabs/#{nth($tabImageName, $i)}_touch.png");
+    }
+  }
+  //未点击时 显示的logo
+  .tabs-md .tab-button[aria-selected=false] {
+    .ion-md-tab-#{nth($tabImageName, $i)} {
+      @extend .ion-tab-icon-md-base;
+      content: url("../assets/img/tabs/#{nth($tabImageName, $i)}.png");
+    }
+  }
+}

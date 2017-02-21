@@ -1,0 +1,65 @@
+page-person {
+  .person-content{
+
+    .about-item{
+      padding: 0;
+      .about-me{
+        padding-left: 10px;
+        .item-inner{
+          border: none;
+        }
+        .user-avatar{
+          img{
+            width: 7rem;
+            height: 7rem;
+          }
+        }
+
+        .three-message{
+
+          ion-col{
+            text-align: center;
+          }
+          p{
+            color: #1f1f1f;
+          }
+          p+p{
+            color: #707070;
+          }
+        }
+        .edit-btn{
+          border-radius: .7rem;
+        }
+      }
+      .nickname{
+        margin-left: 1.2rem;
+        font-size: 14px;
+        color: #2a2929;
+      }
+    }
+
+    .person-list{
+
+      .list-item{
+        border-bottom: 0.55px solid #c8c7cc;
+
+        .item-inner{
+          border: none;
+        }
+        ion-note{
+          font-size: 14px;
+
+        }
+
+        img{
+          height: 1.6rem;
+        }
+        .zhixiang{
+          height: 1rem;
+        }
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,97 @@
+<ion-header class="artist-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only clear color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>艺术家</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="artist_segment" class="segment">
+      <ion-segment-button value="recommended">
+        <span>推荐</span>
+      </ion-segment-button>
+      <ion-segment-button value="ranking">
+        <span>排行</span>
+      </ion-segment-button>
+      <ion-segment-button value="newest">
+        <span>最新</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="artist-content">
+  <div [ngSwitch]="artist_segment" class="artist-segment-page">
+    <ion-list *ngSwitchCase="'recommended'" >
+      <ion-item *ngFor="let recomended_user of recomended_users">
+        <ion-item class="recommended-item" >
+          <ion-avatar item-left>
+            <img [src]="recomended_user.avatar" alt="">
+          </ion-avatar>
+          <div class="information">
+            <p>{{recomended_user.username}}</p>
+            <span>作品：{{recomended_user.worksNum}}</span>
+            <span>粉丝：{{recomended_user.fansNum}}</span>
+          </div>
+          <button ion-button clear color="dark" large item-right>
+            <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item class="img-scroll">
+          <ion-scroll scrollX="true" scrollY="true" >
+            <img *ngFor="let item of recomended_user.images" [src]="item.img" height="100" width="100">
+          </ion-scroll>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'ranking'" class="ranking-page">
+      <ion-item *ngFor="let ranking_user of ranking_users">
+        <ion-item class="recommended-item" >
+          <img *ngIf="ranking_user.sort==1" src="assets/img/label/first-label.png" class="label-logo" item-left>
+          <img *ngIf="ranking_user.sort==2" src="assets/img/label/second-label.png" class="label-logo" item-left>
+          <img *ngIf="ranking_user.sort==3" src="assets/img/label/third-label.png" class="label-logo" item-left>
+          <ion-avatar item-left>
+            <img [src]="ranking_user.avatar" alt="">
+          </ion-avatar>
+          <div class="information">
+            <p>{{ranking_user.username}}</p>
+            <span>作品：{{ranking_user.worksNum}}</span>
+            <span>周浏览量：{{ranking_user.week_browses}}</span>
+          </div>
+          <button ion-button clear color="dark" large item-right>
+            <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item class="img-scroll">
+          <ion-scroll scrollX="true" scrollY="true" >
+            <img *ngFor="let item of ranking_user.images" [src]="item.img" height="100" width="100">
+          </ion-scroll>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'newest'">
+      <ion-item *ngFor="let newest_user of newest_users">
+        <ion-item class="recommended-item" >
+          <ion-avatar item-left>
+            <img [src]="newest_user.avatar" alt="">
+          </ion-avatar>
+          <div class="information">
+            <p>{{newest_user.username}}</p>
+            <span>作品：{{newest_user.worksNum}}</span>
+            <span>粉丝：{{newest_user.fansNum}}</span>
+          </div>
+          <button ion-button clear color="dark" large item-right>
+            <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item class="img-scroll">
+          <ion-scroll scrollX="true" scrollY="true" >
+            <img *ngFor="let item of newest_user.images" [src]="item.img" height="100" width="100">
+          </ion-scroll>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
