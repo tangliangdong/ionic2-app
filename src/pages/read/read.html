@@ -1,0 +1,52 @@
+<ion-header class="read-header">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="dark" small>
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-segment [(ngModel)]="read_segment" class="segment">
+      <ion-segment-button value="art">
+        <span>艺术</span>
+      </ion-segment-button>
+      <ion-segment-button value="design">
+        <span>设计</span>
+      </ion-segment-button>
+      <ion-segment-button value="photography">
+        <span>摄影</span>
+      </ion-segment-button>
+      <ion-segment-button value="life">
+        <span>生活</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="read-content">
+  <div [ngSwitch]="read_segment">
+    <ion-list *ngSwitchCase="'art'">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50>
+              <img src="assets/img/read/IMG_3962.png">
+            </ion-col>
+            <ion-col width-50>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'design'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'photography'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'life'">
+
+    </ion-list>
+  </div>
+
+</ion-content>

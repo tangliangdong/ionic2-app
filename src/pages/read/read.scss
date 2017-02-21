@@ -1,0 +1,65 @@
+page-read{
+  .read-header>.toolbar{
+    height: 60px;
+  }
+  .read-header > .toolbar {
+    padding-top: 14px;
+  }
+  .toolbar-ios .segment-ios{
+    left: auto;
+    width: 90%;
+    padding-top: 10px;
+  }
+  .segment-ios{
+
+    .segment-button {
+      color: #c7c6c6;
+      background-color: transparent;
+      border: 0;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+      // border-bottom: 1px solid;
+      span{
+        border-bottom: 1.6px solid #000;
+      }
+    }
+  }
+
+  .segment-md{
+    .segment-button {
+      color: #c7c6c6;
+      background-color: #transparent;
+      border: 0;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      border-radius: 0px;
+      // border-bottom: 2px solid;
+    }
+  }
+  .segment{
+    .segment-button{
+      font-size: 1.6rem;
+
+    }
+    span{
+      width: 50px;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+
+    }
+  }
+}
