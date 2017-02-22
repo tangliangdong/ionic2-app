@@ -6,6 +6,7 @@ import { CommunityPage } from '../pages/community/community';
 import { MellPage } from '../pages/mell/mell';
 import { PersonPage } from '../pages/person/person';
 import { ArtistPage } from '../pages/artist/artist';
+import { ReadPage } from '../pages/read/read';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -17,7 +18,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     CommunityPage,
     HomePage,
     ArtistPage,
-    TabsPage
+    TabsPage,
+    ReadPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -30,7 +32,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     CommunityPage,
     HomePage,
     ArtistPage,
-    TabsPage
+    TabsPage,
+    ReadPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

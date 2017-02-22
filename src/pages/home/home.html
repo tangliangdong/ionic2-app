@@ -20,7 +20,7 @@
   <ion-item class="home-center-buttons">
     <ion-row>
       <ion-col width-25>
-        <button clear class="four-btn" (click)="limitActivity()">
+        <button clear class="four-btn" (click)="openArtistPage()">
           <img src="assets/img/button/artist.png" alt="">
           <p>艺术家</p>
         </button>
@@ -32,7 +32,7 @@
         </button>
       </ion-col>
       <ion-col width-25>
-        <button clear class="four-btn">
+        <button clear class="four-btn" (click)="openReadPage()">
           <img src="assets/img/button/read.png" alt="">
           <p>阅读</p>
         </button>
@@ -47,24 +47,24 @@
   </ion-item>
 
   <ion-list class="home-list">
-    <ion-card class="card">
+    <ion-card class="card" *ngFor="let home_card of home_cards">
       <ion-item>
         <img src="assets/img/card/triangle.png" class="triangle" alt="">
-        <span class="card-title">展览推荐</span>
+        <span class="card-title" [innerHTML]="home_card.title"></span>
         <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
         <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
       </ion-item>
       <ion-slides class="card-slides">
-        <ion-slide *ngFor="let card of cards">
-          <img [src]="card.image" class="card-image"/>
+        <ion-slide *ngFor="let card of home_card.images">
+          <img [src]="card.img" class="card-image"/>
         </ion-slide>
       </ion-slides>
       <ion-card-content>
         <ion-card-title>
-          WOLF-王野夫
+          {{home_card.author}}
         </ion-card-title>
-        <p>艾米李画廊 | 北京</p>
-        <p>2017.02.17-03.19</p>
+        <p>{{home_card.studio}} | {{home_card.place}}</p>
+        <p>{{home_card.startTime}}-{{home_card.endTime}}</p>
       </ion-card-content>
     </ion-card>
   </ion-list>

@@ -19,6 +19,25 @@ export class CommunityPage {
 
   }
 
+  ionViewDidEnter(){
+    let grid = $('#list-grid ion-col');
+    let gridWidth = grid.first().outerWidth();
+    for(let i = 0 ; i < grid.length ; i++ ){
+      grid.eq(i).css('height',gridWidth);
+    }
+  }
+
+  selectedcom(){
+    $(function(){
+      let grid = $('#list-grid ion-col');
+      console.log(grid);
+      let gridWidth = grid.first().outerWidth();
+      for(let i = 0 ; i < grid.length ; i++ ){
+        grid.eq(i).css('height',gridWidth);
+      }
+    });
+  }
+
   recommend_items = [
     {
       userId: '1',
@@ -132,23 +151,6 @@ export class CommunityPage {
   ];
 
 
-  ionViewDidEnter(){
-    let grid = $('#list-grid ion-col');
-    let gridWidth = grid.first().outerWidth();
-    for(let i = 0 ; i < grid.length ; i++ ){
-      grid.eq(i).css('height',gridWidth);
-    }
-  }
 
-  selectedcom(){
-    $(function(){
-      let grid = $('#list-grid ion-col');
-      console.log(grid);
-      let gridWidth = grid.first().outerWidth();
-      for(let i = 0 ; i < grid.length ; i++ ){
-        grid.eq(i).css('height',gridWidth);
-      }
-    });
-  }
 
 }

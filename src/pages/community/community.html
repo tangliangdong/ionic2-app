@@ -6,7 +6,7 @@
   </ion-navbar> -->
   <ion-toolbar>
     <ion-segment [(ngModel)]="communication" class="segment">
-      <ion-segment-button value="recommended">
+      <ion-segment-button value="recommended" (ionSelect)="selectedcom()">
         <span>推荐</span>
       </ion-segment-button>
       <ion-segment-button value="news">
@@ -71,11 +71,11 @@
           <ion-avatar item-left class="community-avatar">
             <img [src]="recommend_item.avatar">
           </ion-avatar>
-          <p class="username" color="username" [innerHTML]="recommend_item.user"></p>
+          <p class="username" ion-text color="username" [innerHTML]="recommend_item.user"></p>
           <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
         </ion-item>
 
-        <p class="signature" color="dark" [innerHTML]="recommend_item.signatue"></p>
+        <p class="signature" ion-text color="dark" [innerHTML]="recommend_item.signatue"></p>
 
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of recommend_item.images">
@@ -95,21 +95,21 @@
             <button>
               <img src="assets/img/button/praise.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="recommend_item.thumbsNum"></span>
+            <span ion-text color="comment" [innerHTML]="recommend_item.thumbsNum"></span>
           </div>
           <div class="comments-icon">
             <button>
               <img src="assets/img/button/comments.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="recommend_item.commentNum"></span>
+            <span ion-text color="comment" [innerHTML]="recommend_item.commentNum"></span>
           </div>
 
-          <span class="public-time" color="comment" [innerHTML]="recommend_item.addTime" item-right></span>
+          <span class="public-time" ion-text color="comment" [innerHTML]="recommend_item.addTime" item-right></span>
         </ion-item>
         <ion-list class="comments-list">
           <div *ngFor="let comment of recommend_item.comments" class="comments-list-div">
             <button color="commentuser">{{comment.user}}：</button>
-            <span color="comment" [innerHTML]="comment.word"></span>
+            <span ion-text color="comment" [innerHTML]="comment.word"></span>
           </div>
         </ion-list>
       </ion-item>
@@ -123,11 +123,11 @@
           <ion-avatar item-left class="community-avatar">
             <img [src]="news_item.avatar" class="community-avatar-img">
           </ion-avatar>
-          <p class="username" color="username" [innerHTML]="news_item.user"></p>
+          <p class="username" ion-text color="username" [innerHTML]="news_item.user"></p>
           <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
         </ion-item>
 
-        <p class="signature" color="dark" [innerHTML]="news_item.signatue"></p>
+        <p class="signature" ion-text color="dark" [innerHTML]="news_item.signatue"></p>
 
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of news_item.images">
@@ -147,21 +147,21 @@
             <button>
               <img src="assets/img/button/praise.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="news_item.thumbsNum"></span>
+            <span ion-text color="comment" [innerHTML]="news_item.thumbsNum"></span>
           </div>
           <div class="comments-icon">
             <button>
               <img src="assets/img/button/comments.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="news_item.commentNum"></span>
+            <span ion-text color="comment" [innerHTML]="news_item.commentNum"></span>
           </div>
 
-          <span class="public-time" color="comment" [innerHTML]="news_item.addTime" item-right></span>
+          <span class="public-time" ion-text color="comment" [innerHTML]="news_item.addTime" item-right></span>
         </ion-item>
         <ion-list class="comments-list">
           <div *ngFor="let comment of news_item.comments" class="comments-list-div">
             <button color="commentuser">{{comment.user}}：</button>
-            <span color="comment" [innerHTML]="comment.word"></span>
+            <span ion-text color="comment" [innerHTML]="comment.word"></span>
           </div>
         </ion-list>
       </ion-item>
@@ -175,11 +175,11 @@
           <ion-avatar item-left class="community-avatar">
             <img [src]="attention_item.avatar" class="community-avatar-img">
           </ion-avatar>
-          <p class="username" color="username" [innerHTML]="attention_item.user"></p>
+          <p class="username" ion-text color="username" [innerHTML]="attention_item.user"></p>
           <button ion-button item-right small color="dark" class="focus-btn">关注</button>
         </ion-item>
 
-        <p class="signature" color="dark" [innerHTML]="attention_item.signatue"></p>
+        <p class="signature" ion-text color="dark" [innerHTML]="attention_item.signatue"></p>
 
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of attention_item.images">
@@ -199,21 +199,21 @@
             <button>
               <img src="assets/img/button/praise.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="attention_item.thumbsNum"></span>
+            <span ion-text color="comment" [innerHTML]="attention_item.thumbsNum"></span>
           </div>
           <div class="comments-icon">
             <button>
               <img src="assets/img/button/comments.png" alt="">
             </button>
-            <span color="comment" [innerHTML]="attention_item.commentNum"></span>
+            <span ion-text color="comment" [innerHTML]="attention_item.commentNum"></span>
           </div>
 
-          <span class="public-time" color="comment" [innerHTML]="attention_item.addTime" item-right></span>
+          <span ion-text class="public-time" color="comment" [innerHTML]="attention_item.addTime" item-right></span>
         </ion-item>
         <ion-list class="comments-list">
           <div *ngFor="let comment of attention_item.comments" class="comments-list-div">
             <button color="commentuser">{{comment.user}}：</button>
-            <span color="comment" [innerHTML]="comment.word"></span>
+            <span ion-text color="comment" [innerHTML]="comment.word"></span>
           </div>
         </ion-list>
       </ion-item>

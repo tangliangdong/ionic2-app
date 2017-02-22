@@ -10,6 +10,66 @@ page-read{
     width: 90%;
     padding-top: 10px;
   }
+  .read-content{
+    .art-list{
+      // margin: 14px 0 16px 0;
+
+      .art-item{
+        padding-left: 0;
+        border: none;
+        .item-inner{
+          border: none;
+        }
+        ion-col{
+          padding: 0;
+          height: 110px;
+        }
+        ion-row{
+          margin-top: 5px;
+        }
+        .message{
+          p{
+            color: #191919;
+            font-size: 1.4rem;
+            width: 85%;
+            margin: 16px auto 0;
+            white-space:normal;
+          }
+          background-color: #f5f5f5;
+
+          .read-information{
+            div{
+              display: inline-block;
+              margin: 20px 0 0 16px;
+            }
+            img{
+              width: 1.4rem;
+            }
+            img+img{
+              width: 13px;
+            }
+            span{
+              font-size: 1rem;
+            }
+
+          }
+        }
+      }
+      .art-item>.item-inner{
+        padding-right: 0;
+      }
+      .art-item>.item-inner>.input-wrapper>.label{
+        margin: 0;
+      }
+      .art-item>.item-inner>.input-wrapper>.label>ion-grid{
+        padding: 0;
+      }
+
+    }
+
+  }
+
+
   .segment-ios{
 
     .segment-button {
