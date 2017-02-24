@@ -4,13 +4,12 @@ import { NavController,ModalController,ViewController } from 'ionic-angular';
 //import * as $ from "jquery";
 
 @Component({
-  selector: 'page-search',
-  templateUrl: 'search.html'
+  selector: 'page-indent',
+  templateUrl: 'indent.html'
 })
 
-export class SearchPage {
-  search_segment: string = 'hot';
-
+export class IndentPage {
+  indent_segment: string = 'all';
   constructor(public navCtrl: NavController,
             public modalCtrl: ModalController,
           public viewCtrl: ViewController) {

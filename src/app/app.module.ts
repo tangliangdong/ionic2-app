@@ -8,6 +8,9 @@ import { PersonPage } from '../pages/person/person';
 import { ArtistPage } from '../pages/artist/artist';
 import { ReadPage } from '../pages/read/read';
 import { SearchPage } from '../pages/search/search';
+import { CreatePage } from '../pages/create/create';
+import { EditUserPage } from '../pages/edituser/edituser';
+import { IndentPage } from '../pages/indent/indent';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -21,7 +24,10 @@ import { TabsPage } from '../pages/tabs/tabs';
     ArtistPage,
     TabsPage,
     ReadPage,
-    SearchPage
+    CreatePage,
+    SearchPage,
+    EditUserPage,
+    IndentPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,10 +39,13 @@ import { TabsPage } from '../pages/tabs/tabs';
     PersonPage,
     CommunityPage,
     HomePage,
+    CreatePage,
     ArtistPage,
     TabsPage,
     ReadPage,
-    SearchPage
+    SearchPage,
+    EditUserPage,
+    IndentPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

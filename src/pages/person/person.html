@@ -34,13 +34,13 @@
           </ion-row>
         </ion-grid>
 
-        <button ion-button outline color="editbutton" block class="edit-btn">编辑个人资料</button>
+        <button ion-button outline color="editbutton" block class="edit-btn" (click)="openEditUser()">编辑个人资料</button>
       </ion-item>
     </ion-item>
     <p class="nickname">蓝色一只雕</p>
   </ion-item>
   <ion-list class="person-list">
-    <ion-item *ngFor="let item of items" class="list-item" (click)="indent()">
+    <ion-item *ngFor="let item of items" class="list-item" (click)="openPage(item)">
       <img [src]="item.logo" alt="" item-left>
       <ion-note color="settingword" [innerHtml]="item.title"></ion-note>
       <!-- <ion-icon name="ios-arrow-forward-outline" item-right color="settingword"></ion-icon> -->

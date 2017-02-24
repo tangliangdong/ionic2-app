@@ -1,0 +1,30 @@
+page-edituser {
+  .edituser-content{
+
+    .user-avatar{
+      margin: 20px auto 0;
+      width: 10rem;
+    }
+    .list-ios > .item-block:first-child {
+      border: none;
+      margin-top: 40px;
+    }
+
+    .edit-img-word{
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    .item-input ion-label{
+      font-size: 1.4rem;
+    }
+
+    .label-ios {
+      font-size: 1.4rem;
+    }
+    .textarea{
+      font-size: 1.4rem;
+      height: 10rem;
+    }
+  }
+}

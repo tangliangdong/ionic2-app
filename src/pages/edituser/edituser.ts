@@ -4,13 +4,11 @@ import { NavController,ModalController,ViewController } from 'ionic-angular';
 //import * as $ from "jquery";
 
 @Component({
-  selector: 'page-search',
-  templateUrl: 'search.html'
+  selector: 'page-edituser',
+  templateUrl: 'edituser.html'
 })
 
-export class SearchPage {
-  search_segment: string = 'hot';
-
+export class EditUserPage {
   constructor(public navCtrl: NavController,
             public modalCtrl: ModalController,
           public viewCtrl: ViewController) {

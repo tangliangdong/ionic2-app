@@ -1,0 +1,51 @@
+<ion-header class="indent-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button clear (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      订单列表
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="indent_segment">
+      <ion-segment-button value="all">
+        全部
+      </ion-segment-button>
+      <ion-segment-button value="payment">
+        代付款
+      </ion-segment-button>
+      <ion-segment-button value="deliver">
+        代发货
+      </ion-segment-button>
+      <ion-segment-button value="delivered">
+        已发货
+      </ion-segment-button>
+      <ion-segment-button value="returnGoods">
+        已退货
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="indent-content">
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'all'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'payment'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'deliver'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'delivered'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'returnGoods'">
+
+    </ion-list>
+  </div>
+</ion-content>
