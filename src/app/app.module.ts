@@ -11,6 +11,8 @@ import { SearchPage } from '../pages/search/search';
 import { CreatePage } from '../pages/create/create';
 import { EditUserPage } from '../pages/edituser/edituser';
 import { IndentPage } from '../pages/indent/indent';
+import { ShippingAddressPage } from '../pages/shippingAddress/shippingAddress';
+import { AddAddressPage } from '../pages/addAddress/addAddress';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -27,7 +29,9 @@ import { TabsPage } from '../pages/tabs/tabs';
     CreatePage,
     SearchPage,
     EditUserPage,
-    IndentPage
+    IndentPage,
+    ShippingAddressPage,
+    AddAddressPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -45,7 +49,9 @@ import { TabsPage } from '../pages/tabs/tabs';
     ReadPage,
     SearchPage,
     EditUserPage,
-    IndentPage
+    IndentPage,
+    ShippingAddressPage,
+    AddAddressPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

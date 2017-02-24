@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 
 import { EditUserPage } from '../edituser/edituser';
+import { ShippingAddressPage } from '../shippingAddress/shippingAddress';
 import { IndentPage } from '../indent/indent';
+
 
 @Component({
   selector: 'page-person',
@@ -26,6 +28,10 @@ export class PersonPage {
       case 1:
       let indentModal = this.modalCtrl.create(IndentPage);
       indentModal.present();
+      break;
+      case 2:
+      let shippingAddressModal = this.modalCtrl.create(ShippingAddressPage);
+      shippingAddressModal.present();
       break;
     }
   }

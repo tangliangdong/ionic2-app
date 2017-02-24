@@ -1,0 +1,38 @@
+<ion-header class="addAddress-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      添加新地址
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button color="dark" (click)="add()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="addAddress-content">
+  <ion-item>
+    <ion-label>姓名</ion-label>
+    <ion-input placeholder="请输入收货地址"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>手机号码</ion-label>
+    <ion-input placeholder="请输入收货地址"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>省、市、区</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>详细地址</ion-label>
+    <ion-input></ion-input>
+</ion-item>
+  <ion-item>设为默认地址</ion-item>
+  <ion-checkbox></ion-checkbox>
+</ion-content>
