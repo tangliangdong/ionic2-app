@@ -7,6 +7,7 @@ import { MellPage } from '../pages/mell/mell';
 import { PersonPage } from '../pages/person/person';
 import { ArtistPage } from '../pages/artist/artist';
 import { ReadPage } from '../pages/read/read';
+import { SearchPage } from '../pages/search/search';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,7 +20,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     ArtistPage,
     TabsPage,
-    ReadPage
+    ReadPage,
+    SearchPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +35,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     ArtistPage,
     TabsPage,
-    ReadPage
+    ReadPage,
+    SearchPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

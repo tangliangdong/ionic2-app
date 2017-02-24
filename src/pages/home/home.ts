@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 import { ArtistPage } from '../artist/artist';
 import { ReadPage } from '../read/read';
+import { SearchPage } from '../search/search';
+
 
 @Component({
   selector: 'page-home',
@@ -11,7 +13,7 @@ import { ReadPage } from '../read/read';
 export class HomePage {
   constructor(public navCtrl: NavController,
             public modalCtrl: ModalController) {
-
+    
   }
 
   openArtistPage(){
@@ -22,6 +24,10 @@ export class HomePage {
   openReadPage(){
     let readModal = this.modalCtrl.create(ReadPage);
     readModal.present();
+  }
+  openSearchPage(){
+    let searchModal = this.modalCtrl.create(SearchPage);
+    searchModal.present();
   }
 
   slides = [

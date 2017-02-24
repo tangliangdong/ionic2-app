@@ -1,0 +1,71 @@
+<ion-header class="search-header">
+  <ion-navbar>
+    <ion-searchbar class="search-bar" placeholder="搜索图文/专题/展览/机构">
+
+    </ion-searchbar>
+    <button ion-button clear class="cancel-button" (click)="backToHome()">取消</button>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="search_segment">
+      <ion-segment-button value="image_text">
+        图文
+      </ion-segment-button>
+      <ion-segment-button value="subject">
+        专题
+      </ion-segment-button>
+      <ion-segment-button value="exhibition">
+        展览
+      </ion-segment-button>
+      <ion-segment-button value="organization">
+        机构
+      </ion-segment-button>
+      <ion-segment-button value="artist">
+        艺术家
+      </ion-segment-button>
+      <ion-segment-button value="intelligent">
+        达人
+      </ion-segment-button>
+      <ion-segment-button value="works">
+        作品
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="search-content">
+  <div [ngSwitch]="search_segment">
+    <ion-list *ngSwitchCase="'hot'">
+      <p class="title">热门搜索</p>
+      <ion-grid class="hot-grid">
+        <ion-row>
+          <ion-col width-33><span>美学</span></ion-col>
+          <ion-col width-33><span>水墨</span></ion-col>
+          <ion-col width-33><span>历史</span></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-list *ngSwitchCase="'image_text'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'subject'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'exhibition'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'organization'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'artist'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'intelligent'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'works'">
+
+    </ion-list>
+  </div>
+
+</ion-content>

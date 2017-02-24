@@ -1,0 +1,102 @@
+page-search {
+  .search-header {
+    position: relative;
+
+    .search-bar {
+      width: 85%;
+    }
+
+    .toolbar .searchbar-ios .searchbar-input {
+      background: #f8f8f8;
+    }
+
+    .cancel-button {
+      color: black;
+      font-size: 1.4rem;
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      margin: 0;
+    }
+  }
+
+  .search-header>.toolbar{
+    padding: 0 4px;
+  }
+
+  .search-content{
+    .title{
+      margin-left: 10px;
+      color: #cacaca;
+    }
+    .hot-grid{
+      ion-col{
+        text-align: center;
+        padding: 0;
+
+        span{
+          display: block;
+          padding: 4px 0;
+          margin: 0 auto;
+          width: 95%;
+          border: .55px solid #cacaca;
+        }
+      }
+
+    }
+  }
+
+
+  .segment-ios{
+    .segment-button {
+      color: black;
+      background-color: transparent;
+      border: 0;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      height: 80%;
+      position: relative;
+      top: 10%;
+      border-radius: 0px;
+       border-bottom: 1px solid;
+      span{
+        border-bottom: 1.6px solid #000;
+      }
+    }
+  }
+
+  .segment-md{
+    .segment-button {
+      color: #c7c6c6;
+      background-color: #transparent;
+      border: 0;
+      border-radius: 0px;
+    }
+    .segment-button.segment-activated{
+      color: #000000;
+      background: transparent;
+      border-radius: 0px;
+      // border-bottom: 2px solid;
+    }
+  }
+  .segment{
+    .segment-button{
+      font-size: 1.4rem;
+
+    }
+    span{
+      width: 50px;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+
+    }
+  }
+}

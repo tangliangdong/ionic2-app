@@ -13,7 +13,7 @@
   </ion-slides>
 
   <ion-fab top right>
-    <button ion-fab mini color="dark"><ion-icon name="search"></ion-icon></button>
+    <button ion-fab mini color="dark" (click)="openSearchPage()"><ion-icon name="search"></ion-icon></button>
   </ion-fab>
 
   <!-- 中间四个按钮 -->
@@ -47,6 +47,9 @@
   </ion-item>
 
   <ion-list class="home-list">
+    <ion-list-header>
+      Action
+    </ion-list-header>
     <ion-card class="card" *ngFor="let home_card of home_cards">
       <ion-item>
         <img src="assets/img/card/triangle.png" class="triangle" alt="">
