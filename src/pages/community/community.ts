@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
+import { TopicPage } from '../topic/topic';
 import * as $ from "jquery";
 @Component({
   selector: 'page-community',
@@ -13,7 +14,8 @@ export class CommunityPage {
   isAndroid: boolean = false;
 
   constructor(public navCtrl: NavController,
-            platform: Platform) {
+            platform: Platform,
+            public modalCtrl: ModalController) {
     this.isAndroid = platform.is('android');
 
 
@@ -36,6 +38,11 @@ export class CommunityPage {
         grid.eq(i).css('height',gridWidth);
       }
     });
+  }
+
+  openTopicPage(){
+    let topicModal = this.modalCtrl.create(TopicPage);
+    topicModal.present();
   }
 
   recommend_items = [

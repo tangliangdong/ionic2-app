@@ -13,6 +13,14 @@ import { EditUserPage } from '../pages/edituser/edituser';
 import { IndentPage } from '../pages/indent/indent';
 import { ShippingAddressPage } from '../pages/shippingAddress/shippingAddress';
 import { AddAddressPage } from '../pages/addAddress/addAddress';
+import { CollectionPage } from '../pages/collection/collection';
+import { TopicPage } from '../pages/topic/topic';
+import { IntegralPage } from '../pages/integral/integral';
+import { DiyPage } from '../pages/diy/diy';
+import { DiyDetailPage } from '../pages/diyDetail/diyDetail';
+import { GalleryPage } from '../pages/gallery/gallery';
+import { ProductMorePage } from '../pages/productMore/productMore';
+import { ProductDetailPage } from '../pages/productDetail/productDetail';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -31,10 +39,25 @@ import { TabsPage } from '../pages/tabs/tabs';
     EditUserPage,
     IndentPage,
     ShippingAddressPage,
-    AddAddressPage
+    AddAddressPage,
+    CollectionPage,
+    TopicPage,
+    IntegralPage,
+    DiyPage,
+    DiyDetailPage,
+    GalleryPage,
+    ProductMorePage,
+    ProductDetailPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp
+      // ,{
+      // tabsHideOnSubPages:"true", // nav在push的时候隐藏tabs
+      // backButtonText: '',
+      // iconMode: 'ios',
+      // mode: 'ios'
+      // }
+    )
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +74,15 @@ import { TabsPage } from '../pages/tabs/tabs';
     EditUserPage,
     IndentPage,
     ShippingAddressPage,
-    AddAddressPage
+    AddAddressPage,
+    CollectionPage,
+    TopicPage,
+    IntegralPage,
+    DiyPage,
+    DiyDetailPage,
+    GalleryPage,
+    ProductMorePage,
+    ProductDetailPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

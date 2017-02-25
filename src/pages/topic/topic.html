@@ -1,0 +1,54 @@
+<ion-header class="topic-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="backToHome()" color="dark">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      话题
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button class="send-button" (click)="sendTopic()" color="dark">
+        发送
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="topic-content">
+  <ion-item class="item-word">
+    <textarea name="name" rows="8" cols="80" placeholder="请输入必填文字"></textarea>
+    <button ion-button outline (click)="uploadImg()">
+      图片上传
+    </button>
+    <ion-list>
+      <div *ngFor="let img of user" >
+        <img [src]="img" alt="">
+      </div>
+    </ion-list>
+  </ion-item>
+
+
+  <ion-item class="label-item">
+    <div id="choose_label">
+      
+    </div>
+    <ion-item class="label-item-header">
+      <ion-icon name="ios-pricetag-outline"></ion-icon>
+      请选择标签
+    </ion-item>
+    <div id="label-area">
+      <button ion-button *ngFor="let label of labels" outline color="editbutton" class="label-button" (click)="itemSelected(label)">
+        {{label.word}}
+        <span style="opacity: 0">{{label.id}}</span>
+      </button>
+    </div>
+    <button ion-button clear id="unfold-button" class="unfold-button" color="dark" (click)="unfold()">
+      展开
+      <ion-icon name="ios-arrow-down-outline" color="editbutton"></ion-icon>
+    </button>
+
+  </ion-item>
+</ion-content>

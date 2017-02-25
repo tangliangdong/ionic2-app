@@ -1,0 +1,22 @@
+<ion-content class="productDetail-content">
+  <ion-fab top left>
+    <button ion-fab mini color="settingword" (click)="backToHome()">
+      <ion-icon name="ios-arrow-back-outline"></ion-icon>
+    </button>
+  </ion-fab>
+  <div class="image-text">
+    <img [src]="product.image" alt="">
+  </div>
+  <div class="product-name">
+    <span>{{product.name}}</span>
+    <button ion-button clear color="dark" (click)="collected()">
+      <ion-icon name="ios-heart-outline" id="heart-icon" large></ion-icon>
+    </button>
+  </div>
+  <p ion-text color="danger" class="product-price">￥{{product.price}}</p>
+  <ion-item>
+    <img src="assets/img/card/triangle.png" class="triangle" alt="">
+    <span class="card-title">商品描述</span>
+  </ion-item>
+
+</ion-content>

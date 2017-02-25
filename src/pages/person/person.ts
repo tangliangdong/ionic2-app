@@ -5,7 +5,7 @@ import { NavController,ModalController } from 'ionic-angular';
 import { EditUserPage } from '../edituser/edituser';
 import { ShippingAddressPage } from '../shippingAddress/shippingAddress';
 import { IndentPage } from '../indent/indent';
-
+import { CollectionPage } from '../collection/collection';
 
 @Component({
   selector: 'page-person',
@@ -33,6 +33,11 @@ export class PersonPage {
       let shippingAddressModal = this.modalCtrl.create(ShippingAddressPage);
       shippingAddressModal.present();
       break;
+      case 3:
+      let collectionModal = this.modalCtrl.create(CollectionPage);
+      collectionModal.present();
+      break;
+
     }
   }
 

@@ -15,30 +15,45 @@
   <ion-grid class="mell-grid-btn">
     <ion-row>
       <ion-col width-50>
-        <img src="assets/img/mell/CustomMade1.png" alt="">
+        <button ion-button clear class="img-button" (click)="openDiy()">
+          <img src="assets/img/mell/CustomMade1.png">
+        </button>
       </ion-col>
-      <ion-col width-50>
+      <ion-col tappable width-50 >
+        <button ion-button clear class="img-button" (click)="openIntegralPage()">
+          <img  src="assets/img/mell/CreditsExchange2.png">
+        </button>
+      </ion-col>
+      <!-- <ion-col width-50>
         <img src="assets/img/mell/ArtDerivatives2.png" alt="">
-      </ion-col>
+      </ion-col> -->
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col width-50>
         <img src="assets/img/mell/OriginalArt1.png" alt="">
       </ion-col>
-      <ion-col width-50>
+      <ion-col width-50 (click)="openIntegralPage">
         <img src="assets/img/mell/CreditsExchange2.png" alt="">
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
 
   <ion-list>
     <ion-list-header class="list-header">
       <img src="assets/img/card/triangle.png" class="triangle">
       <span>艺术衍生</span>
-      <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
+      <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right (click)="openMorePage()" tappable>
       <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
     </ion-list-header>
-    <ion-grid class="mell-list-grid">
+    <div *ngFor="let mellthing of mellthings" class="mellthing-div" (click)="openDetailPage(mellthing)">
+      <div class="img-div">
+        <img [src]="mellthing.image">
+      </div>
+      <span>{{mellthing.name}}</span>
+      <p ion-text color="danger">￥{{mellthing.price}}</p>
+    </div>
+
+    <!-- <ion-grid class="mell-list-grid">
       <ion-row *ngFor="let mellthing of mellthings">
         <ion-col width-50>
           <img [src]="mellthing.image.first">
@@ -47,7 +62,24 @@
           <img [src]="mellthing.image.second">
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid> -->
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header class="list-header">
+      <img src="assets/img/card/triangle.png" class="triangle">
+      <span>寻艺定制</span>
+      <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right (click)="openMorePage()" tappable>
+      <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
+    </ion-list-header>
+    <div *ngFor="let mellthing of mellthings" class="mellthing-div">
+      <div class="img-div">
+        <img [src]="mellthing.image">
+      </div>
+
+      <span>{{mellthing.name}}</span>
+      <p>￥{{mellthing.price}}</p>
+    </div>
   </ion-list>
 
 

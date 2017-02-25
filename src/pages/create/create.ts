@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController,ModalController,ViewController } from 'ionic-angular';
+import { NavController,ModalController,ViewController,ToastController } from 'ionic-angular';
 //import * as $ from "jquery";
 
 @Component({
@@ -9,12 +9,22 @@ import { NavController,ModalController,ViewController } from 'ionic-angular';
 })
 
 export class CreatePage {
-  
+  create_segment: string = 'all';
 
   constructor(public navCtrl: NavController,
             public modalCtrl: ModalController,
-          public viewCtrl: ViewController) {
+          public viewCtrl: ViewController,
+        public toastCtrl: ToastController) {
 
+  }
+
+
+  chooseTemplate(item){
+    
+  }
+
+  doRefresh(event){
+    event.compete();
   }
 
   backToHome(){
@@ -25,6 +35,19 @@ export class CreatePage {
     // $('.searchbar-input').focus();
   }
 
-
+  alls = [
+    {
+      img: 'assets/img/square/woodcarving.png'
+    },
+    {
+      img: 'assets/img/square/IMG_3597.png'
+    },
+    {
+      img: 'assets/img/square/IMG_3932.png'
+    },
+    {
+      img: 'assets/img/square/IMG_3745.png'
+    },
+  ]
 
 }

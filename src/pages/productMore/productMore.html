@@ -1,0 +1,22 @@
+<ion-header class="productMore-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      艺术衍生
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="productMore-content">
+  <div *ngFor="let product of products" class="productMore-div">
+    <div class="productMore-img">
+      <img [src]="product.image" alt="">
+    </div>
+    <span>{{product.name}}</span>
+    <p ion-text color="danger">￥{{product.price}}</p>
+  </div>
+</ion-content>

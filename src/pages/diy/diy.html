@@ -1,0 +1,22 @@
+<ion-header class="diy-header">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      定制
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="diy-content">
+  <ion-list class="diy-list">
+    <div *ngFor="let diy_good of diy_goods" (click)="ionSelected(diy_good)" class="diy-div">
+      <img [src]="diy_good.img" alt="">
+      <p>{{diy_good.type}}</p>
+    </div>
+  </ion-list>
+</ion-content>

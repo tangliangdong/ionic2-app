@@ -1,9 +1,59 @@
 <ion-header class="create-header">
-  <ion-navbar>
-
+  <ion-navbar color="dark">
+    <ion-buttons start>
+      <button ion-button color="light" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      选择页面
+    </ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content class="create-content">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="md-arrow-round-down"
+      pullingText="下拉立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在更新...">
+    </ion-refresher-content>
+  </ion-refresher>
 
+  <div [ngSwitch]="create_segment">
+    <ion-list *ngSwitchCase="'all'" class="create-list">
+      <div tappable *ngFor="let all of alls" (click)="chooseTemplate(all)">
+        <img [src]="all.img" alt="">
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'introduce'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'singleImg'">
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'multipleImg'">
+
+    </ion-list>
+  </div>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="create_segment" color="dark">
+      <ion-segment-button value="all">
+        <span>全部</span>
+      </ion-segment-button>
+      <ion-segment-button value="introduce">
+        <span>介绍</span>
+      </ion-segment-button>
+      <ion-segment-button value="singleImg">
+        <span>单图</span>
+      </ion-segment-button>
+      <ion-segment-button value="multipleImg">
+        <span>多图</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

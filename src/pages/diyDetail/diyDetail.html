@@ -1,0 +1,44 @@
+<ion-header class="diyDetail-header">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      定制
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear color="dark">预览</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="diyDetail-content">
+  <img [src]="good.img" alt="">
+</ion-content>
+
+<ion-footer class="diyDetail-footer">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-33>
+          <button ion-button clear color="dark" (click)="openGallery()">
+            图库
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear color="dark">
+            上传
+          </button>
+        </ion-col>
+        <ion-col width-33>
+          <button ion-button clear color="dark">
+            文字
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

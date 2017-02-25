@@ -1,0 +1,48 @@
+page-topic {
+  .item>.item-inner{
+    border: none;
+  }
+  .topic-header{
+
+    .send-button{
+      font-size: 1.4rem;
+    }
+  }
+  .topic-content{
+    background-color: #eee;
+
+    .item-word>.item-inner{
+      border: none;
+    }
+
+    .label-button{
+      font-size: 1.4rem;
+      height: 30px;
+      padding: 0 15px;
+      margin: 0.4rem 0.4rem;
+    }
+    .item-ios.item-block .item-inner{
+      border: none;
+    }
+    .label-item{
+      margin-top: 10px;
+
+      .unfold-button{
+        display: block;
+        margin: 10px 0 0 0;
+        .icon-ios-editbutton{
+          margin-left: 10px;
+        }
+      }
+      .label-item-header>.item-inner{
+        border: none;
+      }
+    }
+  }
+
+  #label-area{
+    overflow: hidden;
+    height: 80px;
+    white-space: normal;
+  }
+}

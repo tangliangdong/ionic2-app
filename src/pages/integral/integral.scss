@@ -1,0 +1,76 @@
+page-integral {
+  .integral-content {
+    .integral-me {
+      position: relative;
+
+      .circle > span {
+        font-size: 1.2rem;
+        margin: 0 0 0 0;
+        color: white;
+        display: block;
+      }
+
+      .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        height: 80%;
+        text-align: center;
+
+        p {
+          font-size: 2rem;
+          margin: 50px 0 0;
+          color: white;
+        }
+
+        button {
+          font-size: 1.4rem;
+          height: 30px;
+        }
+      }
+
+      .me-button-left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .me-button-right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .signIn-button {
+      height: 30px;
+    }
+
+    ion-col {
+      text-align: center;
+    }
+
+    .exchangeGoods {
+      text-align: left;
+
+      div {
+        width: 46%;
+        text-align: left;
+        display: inline-block;
+        margin: 0 2%;
+
+        p {
+          font-size: 1.2rem;
+          margin: 0 0 20px;
+        }
+      }
+
+      div > span {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

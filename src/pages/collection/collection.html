@@ -1,0 +1,26 @@
+<ion-header class="collection-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      我的收藏
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="collection-content">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="md-arrow-round-down"
+      pullingText="下拉立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在更新...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item>hello world</ion-item>
+  </ion-list>
+</ion-content>

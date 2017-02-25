@@ -1,0 +1,42 @@
+<ion-header class="gallery-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-down-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      挑选美图
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="gallery_type">
+      <ion-segment-button value="puppies">
+        新潮咖
+      </ion-segment-button>
+      <ion-segment-button value="tongQu">
+        童趣卡通
+      </ion-segment-button>
+      <ion-segment-button value="literature">
+        文艺清新
+      </ion-segment-button>
+      <ion-segment-button value="chineseStyle">
+        中国风
+      </ion-segment-button>
+      <ion-segment-button value="romantic">
+        浪漫梦幻
+      </ion-segment-button>
+      <ion-segment-button value="other">
+        其他
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="gallery-content">
+  <div class="gallery-div" *ngFor="let gallery of gallerys">
+    <img [src]="gallery.img" alt="">
+  </div>
+</ion-content>

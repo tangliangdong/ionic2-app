@@ -4,11 +4,11 @@ import { NavController,ModalController,ViewController } from 'ionic-angular';
 //import * as $ from "jquery";
 
 @Component({
-  selector: 'page-addAddress',
-  templateUrl: 'addAddress.html'
+  selector: 'page-collection',
+  templateUrl: 'collection.html'
 })
 
-export class AddAddressPage {
+export class CollectionPage {
 
 
   constructor(public navCtrl: NavController,
@@ -19,6 +19,11 @@ export class AddAddressPage {
 
   backToHome(){
     this.viewCtrl.dismiss();
+  }
+
+  doRefresh(event){
+    console.log(event);
+    event.complete();
   }
 
   ionViewDidEnter(){

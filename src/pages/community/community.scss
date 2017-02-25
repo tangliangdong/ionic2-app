@@ -1,4 +1,7 @@
 page-community {
+  .community-header{
+    position: relative;
+  }
   .segment-ios{
     .segment-button {
       color: #c7c6c6;
@@ -53,7 +56,7 @@ page-community {
   .write-btn{
     background: transparent;
     position: absolute;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     z-index: 100;
     right: 7%;

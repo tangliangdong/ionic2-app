@@ -1,0 +1,49 @@
+<ion-header class="integral-header">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      积分商城
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="integral-content">
+  <div class="integral-me">
+    <img src="assets/img/mell/fangao.png">
+    <div class="circle">
+      <img src="" alt="">
+      <p>3</p>
+      <span>我的积分</span>
+
+      <button ion-button outline class="me-button-left" color="light">积分明细</button>
+      <button ion-button outline class="me-button-right" color="light">兑换记录</button>
+
+
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <p>
+          每次签到可获得<span class="number" ion-text color="danger">5</span>积分
+        </p>
+      </ion-col>
+      <ion-col width-50>
+        <button ion-button color="danger" class="signIn-button" id="signIn-button" (click)="signIn()">签到</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="exchangeGoods">
+    <div *ngFor="let Redemption of Redemptions">
+      <img [src]="Redemption.img" alt="">
+      <span>{{Redemption.name}}{{Redemption.type}}</span>
+      <p>{{Redemption.integral}}积分</p>
+    </div>
+  </ion-list>
+
+</ion-content>
