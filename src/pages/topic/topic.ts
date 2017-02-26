@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImagePicker,Geolocation } from 'ionic-native';
+import { ImagePicker,Geolocation,HTTP } from 'ionic-native';
 import { NavController,ModalController,ViewController ,ToastController} from 'ionic-angular';
 import * as $ from "jquery";
 // import { AddAddressPage } from '../addAddress/addAddress';
@@ -11,6 +11,7 @@ import * as $ from "jquery";
 
 export class TopicPage {
 
+  placeNames: string = '';
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
               public viewCtrl: ViewController,
@@ -21,13 +22,36 @@ export class TopicPage {
     // });
   }
 
+  location(){
+    Geolocation.getCurrentPosition().then((resp) => {
+     // resp.coords.latitude
+     // resp.coords.longitude
+       console.log('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location='+Math.abs(resp.coords.longitude)+','+resp.coords.latitude+'&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0')
+       HTTP.post('https://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location='+Math.abs(resp.coords.longitude)+','+resp.coords.latitude+'&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0', {}, {})
+      .then(data => {
+        console.log(data.data.regeocodes[0].formatted_address);
+         $('#placeName').text(data.data.regeocodes[0].formatted_address);
+         $('#placeName').text(resp.coords.longitude+","+resp.coords.latitude);
+        console.log(data.status);
+        console.log(data.data);
+        console.log(data.headers);
+      })
+      .catch(error => {
+
+      });
+     console.log(resp.coords.latitude);
+     console.log(resp.coords.longitude);
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
+  }
+
   sendTopic(){
     let sendToast = this.toastCtrl.create({
       message: '话题描述不能为空',
       duration: 2000,
       position: 'top'
     });
-
     sendToast.present();
   }
 
