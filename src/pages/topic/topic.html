@@ -19,21 +19,12 @@
 
 <ion-content class="topic-content">
   <ion-item class="item-word">
-    <textarea name="name" rows="8" cols="80" placeholder="请输入必填文字"></textarea>
-    <button ion-button outline (click)="uploadImg()">
-      图片上传
-    </button>
-    <ion-list>
-      <div *ngFor="let img of user" >
-        <img [src]="img" alt="">
-      </div>
-    </ion-list>
+    <ion-textarea rows="8" cols="80" placeholder="请输入必填文字"></ion-textarea>
   </ion-item>
-
 
   <ion-item class="label-item">
     <div id="choose_label">
-      
+
     </div>
     <ion-item class="label-item-header">
       <ion-icon name="ios-pricetag-outline"></ion-icon>
@@ -50,5 +41,17 @@
       <ion-icon name="ios-arrow-down-outline" color="editbutton"></ion-icon>
     </button>
 
+  </ion-item>
+
+  <ion-item class="label-item">
+    <button ion-button outline large color="dark" (click)="uploadImg()" icon-left>
+      <ion-icon name="md-add"></ion-icon>
+      上传图片
+    </button>
+    <ion-list style="margin:0;">
+      <div *ngFor="let img of user" >
+        <img [src]="img" alt="">
+      </div>
+    </ion-list>
   </ion-item>
 </ion-content>

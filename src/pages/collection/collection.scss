@@ -1,4 +1,10 @@
 page-collection {
+  .collection-header{
+    .back-button>.button-inner{
+      color: #222;
+    }
+  }
+
   .collection-content{
     .scroll-content{
       // border: none;

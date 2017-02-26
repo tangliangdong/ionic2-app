@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ImagePicker } from 'ionic-native';
-
+import { ImagePicker,Geolocation } from 'ionic-native';
 import { NavController,ModalController,ViewController ,ToastController} from 'ionic-angular';
 import * as $ from "jquery";
 // import { AddAddressPage } from '../addAddress/addAddress';
@@ -82,7 +81,7 @@ export class TopicPage {
         // button.children('.button-inner>.icon').addClass('ion-ios-arrow-down-outline');
         // button.children('.button-inner>.icon:before').css('content', '\f3d0');
         button.children('span').text('展开');
-        $('#label-area').css('height','80');
+        $('#label-area').css('height','40');
       }
     });
   }

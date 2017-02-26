@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController,ModalController,ViewController ,NavParams} from 'ionic-angular';
 //import * as $ from "jquery";
+import { ProductDetailPage } from '../productDetail/productDetail';
 
 @Component({
   selector: 'page-productMore',
@@ -13,6 +14,13 @@ export class ProductMorePage {
             public modalCtrl: ModalController,
           public viewCtrl: ViewController) {
 
+  }
+
+  openDetailPage(item){
+    let productDetailModal = this.modalCtrl.create(ProductDetailPage,{
+      product: item
+    });
+    productDetailModal.present();
   }
 
   backToHome(){

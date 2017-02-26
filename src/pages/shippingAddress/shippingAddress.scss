@@ -1,5 +1,10 @@
 page-shippingAddress {
   .shippingAddress-content{
+    .back-button>.button-inner{
+      color: #222;
+    }
+  }
+  .shippingAddress-content{
     position: relative;
     .isNoAddress{
       text-align: center;

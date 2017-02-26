@@ -21,6 +21,17 @@ import { DiyDetailPage } from '../pages/diyDetail/diyDetail';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { ProductMorePage } from '../pages/productMore/productMore';
 import { ProductDetailPage } from '../pages/productDetail/productDetail';
+import { DynamicDetailPage } from '../pages/dynamicDetail/dynamicDetail';
+import { LoginCenterPage } from '../pages/loginCenter/loginCenter';
+import { LoginPage } from '../pages/login/login';
+import { RegisteredPage } from '../pages/registered/registered';
+import { SettingPage } from '../pages/setting/setting';
+import { CommentPage } from '../pages/comment/comment';
+import { MessagePushPage } from '../pages/messagePush/messagePush';
+import { AboutXunyiPage } from '../pages/aboutXunyi/aboutXunyi';
+import { ContactPage } from '../pages/contact/contact';
+import { PrivateLetterPage } from '../pages/privateLetter/privateLetter';
+import { MyTopicPage } from '../pages/myTopic/myTopic';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -47,16 +58,27 @@ import { TabsPage } from '../pages/tabs/tabs';
     DiyDetailPage,
     GalleryPage,
     ProductMorePage,
-    ProductDetailPage
+    ProductDetailPage,
+    DynamicDetailPage,
+    LoginCenterPage,
+    LoginPage,
+    RegisteredPage,
+    SettingPage,
+    CommentPage,
+    MessagePushPage,
+    AboutXunyiPage,
+    ContactPage,
+    PrivateLetterPage,
+    MyTopicPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp
-      // ,{
-      // tabsHideOnSubPages:"true", // nav在push的时候隐藏tabs
-      // backButtonText: '',
-      // iconMode: 'ios',
-      // mode: 'ios'
-      // }
+      ,{
+      tabsHideOnSubPages:"true", // nav在push的时候隐藏tabs
+      backButtonText: '',
+      iconMode: 'ios',
+      mode: 'ios'
+      }
     )
   ],
   bootstrap: [IonicApp],
@@ -82,7 +104,18 @@ import { TabsPage } from '../pages/tabs/tabs';
     DiyDetailPage,
     GalleryPage,
     ProductMorePage,
-    ProductDetailPage
+    ProductDetailPage,
+    DynamicDetailPage,
+    LoginCenterPage,
+    LoginPage,
+    RegisteredPage,
+    SettingPage,
+    CommentPage,
+    MessagePushPage,
+    AboutXunyiPage,
+    ContactPage,
+    PrivateLetterPage,
+    MyTopicPage,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

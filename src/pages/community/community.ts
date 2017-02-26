@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { TopicPage } from '../topic/topic';
+import { DynamicDetailPage } from '../dynamicDetail/dynamicDetail'
+
 import * as $ from "jquery";
 @Component({
   selector: 'page-community',
@@ -19,6 +21,13 @@ export class CommunityPage {
     this.isAndroid = platform.is('android');
 
 
+  }
+
+  openDynamicDetailPage(item){
+    let dynamicModal = this.modalCtrl.create(DynamicDetailPage,{
+      dynamic: item
+    });
+    dynamicModal.present();
   }
 
   ionViewDidEnter(){
@@ -44,6 +53,15 @@ export class CommunityPage {
     let topicModal = this.modalCtrl.create(TopicPage);
     topicModal.present();
   }
+  /**
+   * 点击图片查看大图
+   * @return {[type]} [description]
+   */
+  openLargeImage(event: Event){
+    // 禁止事件冒泡
+    event.stopPropagation();
+    console.log(event);
+  }
 
   recommend_items = [
     {
@@ -51,6 +69,7 @@ export class CommunityPage {
       user: '蓝暖',
       avatar: 'assets/img/avatar/lannuan.png',
       signature: '剪切，拼接，镂空，浑然一体。',
+      time: '02月23日',
       images: [
         {
           a: 'assets/img/square/IMG_3533.JPG',
@@ -90,6 +109,7 @@ export class CommunityPage {
       user: 'SHERRY',
       avatar: 'assets/img/avatar/sherry_avatar.png',
       signature: '石头亦有别样的风采，与一般的石头相比，他们只是多了排列组合。',
+      time: '02月23日',
       images: [
         {
           a: 'assets/img/square/IMG_3807.png',
@@ -129,6 +149,7 @@ export class CommunityPage {
       user: '画府成奇。。',
       avatar: 'assets/img/avatar/huafuchengqi.png',
       signature: '色彩的魅力',
+      time: '02月23日',
       images: [
         {
           a: 'assets/img/square/IMG_3592.png',

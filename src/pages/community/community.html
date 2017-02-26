@@ -66,7 +66,7 @@
         </ion-row>
       </ion-grid> -->
 
-      <ion-item class="community-item" *ngFor="let recommend_item of recommend_items">
+      <ion-item class="community-item" *ngFor="let recommend_item of recommend_items" (click)="openDynamicDetailPage(recommend_item)">
         <ion-item class="item-head">
           <ion-avatar item-left class="community-avatar">
             <img [src]="recommend_item.avatar">
@@ -79,14 +79,14 @@
 
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of recommend_item.images">
-            <ion-col width-33>
-              <img [src]="row.a" alt="">
+            <ion-col width-33 >
+              <img [src]="row.a" tappable (click)="openLargeImage($event)">
+            </ion-col>
+            <ion-col width-33 tappable>
+              <img [src]="row.b" tappable (click)="openLargeImage($event)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.b" alt="">
-            </ion-col>
-            <ion-col width-33>
-              <img [src]="row.c" alt="">
+              <img [src]="row.c" tappable (click)="openLargeImage($event)">
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -118,7 +118,7 @@
 
     <!-- 最新 列表 -->
     <ion-list *ngSwitchCase="'news'" >
-      <ion-item class="community-item" *ngFor="let news_item of news_items">
+      <ion-item class="community-item" *ngFor="let news_item of news_items" (click)="openDynamicDetailPage(news_item)">
         <ion-item class="item-head">
           <ion-avatar item-left class="community-avatar">
             <img [src]="news_item.avatar" class="community-avatar-img">
@@ -132,13 +132,13 @@
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of news_item.images">
             <ion-col width-33>
-              <img [src]="row.a" alt="">
+              <img [src]="row.a" tappable (click)="openLargeImage($event)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.b" alt="">
+              <img [src]="row.b" tappable (click)="openLargeImage($event)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.c" alt="">
+              <img [src]="row.c" tappable (click)="openLargeImage($event)">
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -170,7 +170,7 @@
 
     <!-- 关注 列表 -->
     <ion-list *ngSwitchCase="'attention'">
-      <ion-item class="community-item" *ngFor="let attention_item of attention_items">
+      <ion-item class="community-item" *ngFor="let attention_item of attention_items" (click)="openDynamicDetailPage(attention_item)">
         <ion-item class="item-head">
           <ion-avatar item-left class="community-avatar">
             <img [src]="attention_item.avatar" class="community-avatar-img">
@@ -184,13 +184,13 @@
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of attention_item.images">
             <ion-col width-33>
-              <img [src]="row.a" alt="">
+              <img [src]="row.a" tappable (click)="openLargeImage($event)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.b" alt="">
+              <img [src]="row.b" tappable (click)="openLargeImage($event)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.c" alt="">
+              <img [src]="row.c" tappable (click)="openLargeImage($event)">
             </ion-col>
           </ion-row>
         </ion-grid>

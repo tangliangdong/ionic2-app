@@ -1,0 +1,23 @@
+<ion-header class="aboutXunyi-header">
+  <ion-navbar>
+    <ion-title>
+      关于寻艺
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="aboutXunyi-content">
+  <div class="about-logo">
+    <img src="assets/img/label/icon.png" alt="">
+  </div>
+  <p class="version">1.0.0</p>
+  <ion-list>
+    <button *ngIf="!isAndroid" ion-item (click)="grade()">
+      <ion-label>去评分</ion-label>
+    </button>
+    <button ion-item (click)="contact()">
+      <ion-label>联系我们</ion-label>
+    </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-header class="myTopic-header">
+  <ion-navbar>
+    <ion-title>
+      消息
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="myTopic-content">
+  <button ion-item *ngFor="let message of list">
+    {{message.name}}
+  </button>
+</ion-content>

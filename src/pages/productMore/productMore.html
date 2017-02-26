@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content class="productMore-content">
-  <div *ngFor="let product of products" class="productMore-div">
+  <div *ngFor="let product of products" class="productMore-div" (click)="openDetailPage(product)">
     <div class="productMore-img">
       <img [src]="product.image" alt="">
     </div>

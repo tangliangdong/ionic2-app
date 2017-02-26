@@ -1,0 +1,19 @@
+<ion-header class="setting-header">
+  <ion-navbar>
+    <ion-title>
+      设置
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="setting-content">
+  <ion-list>
+    <button ion-item *ngFor="let item of settingClass" (click)="openSettingPage(item)">
+      {{item.name}}
+    </button>
+  </ion-list>
+
+  <button ion-button block color="dark" class="logout-button" (click)="logout()">
+    退出登录
+  </button>
+</ion-content>

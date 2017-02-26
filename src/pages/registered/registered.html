@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      注册
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="registered-content" padding>
+  <ion-item>
+    <ion-input placeholder="手机号"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="密码"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>我已阅读</ion-label>
+    <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+  </ion-item>
+
+  <button ion-button block color="dark">下一步</button>
+
+  <button ion-button clear color="dark" (click)="backToLogin()">已有账号？立即登录</button>
+
+</ion-content>

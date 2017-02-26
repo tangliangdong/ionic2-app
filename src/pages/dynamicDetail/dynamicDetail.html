@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button clear color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button clear color="dark" (click)="share($event)">
+        <ion-icon name="ios-share-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dynamicDetail-content" padding>
+  <ion-item class="user-detail">
+    <ion-avatar item-left>
+      <img [src]="detail.avatar" alt="">
+    </ion-avatar>
+    <div class="user-word">
+      <p>{{detail.user}}</p>
+      <span>{{detail.time}}</span>
+    </div>
+    <button ion-button outline color="dark" item-right>
+      关注
+    </button>
+  </ion-item>
+  <p>{{detail.signature}}</p>
+  <div *ngFor="let img of detail.imgs">
+    <img [src]="img" alt="">
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button clear color="dark" (click)="upload()">
+        <ion-icon name="ios-image-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar>
+
+    </ion-searchbar>
+    <ion-buttons end>
+      <button ion-button clear color="dark">
+        发言
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+<div class="shareCurtain" id="shareCurtain" (click)="hidden()">
+  <div class="show">
+    <ion-item>
+      <ion-label>
+        分享至
+      </ion-label>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-20>
+          <div>
+            <img src="assets/img/label/CircleOfFriends.png" (click)="shareWhat($event,1)">
+            <p>朋友圈</p>
+          </div>
+        </ion-col>
+        <ion-col width-20>
+          <div>
+            <img src="assets/img/label/weichat.png" (click)="shareWhat($event,2)">
+            <p>微信</p>
+          </div>
+        </ion-col>
+        <ion-col width-20>
+          <div>
+            <img src="assets/img/label/qq.png" (click)="shareWhat($event,3)">
+            <p>QQ</p>
+          </div>
+        </ion-col>
+        <ion-col width-20>
+          <div>
+            <img src="assets/img/label/qqZero.png" (click)="shareWhat($event,4)">
+            <p>QQ空间</p>
+          </div>
+        </ion-col>
+        <ion-col width-20>
+          <div>
+            <img src="assets/img/label/weibo.png" (click)="shareWhat($event,5)">
+            <p>微博</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="share-footer">
+      <hr>
+      <span>分享内容可获得5积分</span>
+      <hr>
+    </div>
+  </div>
+
+
+</div>

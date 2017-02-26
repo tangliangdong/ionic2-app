@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button clear color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      手机登录
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="login-content" padding>
+  <ion-item>
+    <ion-icon name="person"></ion-icon>
+    <ion-input [(ngModel)]="user.phone" placeholder="手机号" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="user.password" placeholder="密码" type="password"></ion-input>
+  </ion-item>
+  <button ion-button block color="dark" (click)="doLogin()" class="login-button">
+    登录
+  </button>
+  <button ion-button clear color="dark">
+    忘记密码？
+  </button>
+</ion-content>

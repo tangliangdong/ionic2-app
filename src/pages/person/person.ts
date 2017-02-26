@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 
-import { NavController,ModalController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 
 import { EditUserPage } from '../edituser/edituser';
 import { ShippingAddressPage } from '../shippingAddress/shippingAddress';
 import { IndentPage } from '../indent/indent';
 import { CollectionPage } from '../collection/collection';
+import { SettingPage } from '../setting/setting';
+import { PrivateLetterPage } from '../privateLetter/privateLetter';
+import { MyTopicPage } from '../myTopic/myTopic';
+
 
 @Component({
   selector: 'page-person',
@@ -14,29 +18,43 @@ import { CollectionPage } from '../collection/collection';
 export class PersonPage {
 
   constructor(public navCtrl: NavController,
-            public modalCtrl: ModalController) {
+    public modalCtrl: ModalController) {
 
   }
 
-  openEditUser(){
+  openEditUser() {
     let editUserModal = this.modalCtrl.create(EditUserPage);
     editUserModal.present();
   }
 
-  openPage(item){
-    switch(item.id){
+  openPage(item) {
+    switch (item.id) {
       case 1:
-      let indentModal = this.modalCtrl.create(IndentPage);
-      indentModal.present();
-      break;
+        // let indentModal = this.modalCtrl.create(IndentPage);
+        // indentModal.present();
+        this.navCtrl.push(IndentPage);
+        break;
       case 2:
-      let shippingAddressModal = this.modalCtrl.create(ShippingAddressPage);
-      shippingAddressModal.present();
-      break;
+        // let shippingAddressModal = this.modalCtrl.create(ShippingAddressPage);
+        // shippingAddressModal.present();
+        this.navCtrl.push(ShippingAddressPage);
+        break;
       case 3:
-      let collectionModal = this.modalCtrl.create(CollectionPage);
-      collectionModal.present();
-      break;
+        // let collectionModal = this.modalCtrl.create(CollectionPage);
+        // collectionModal.present();
+        this.navCtrl.push(CollectionPage);
+        break;
+      case 4:
+        this.navCtrl.push(MyTopicPage);
+        break;
+      case 5:
+        this.navCtrl.push(PrivateLetterPage);
+        break;
+      case 6:
+        // let settingModal = this.modalCtrl.create(SettingPage);
+        // settingModal.present();
+        this.navCtrl.push(SettingPage);
+        break;
 
     }
   }

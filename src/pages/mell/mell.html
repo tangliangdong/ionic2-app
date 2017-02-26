@@ -72,7 +72,7 @@
       <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right (click)="openMorePage()" tappable>
       <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
     </ion-list-header>
-    <div *ngFor="let mellthing of mellthings" class="mellthing-div">
+    <div *ngFor="let mellthing of mellthings" class="mellthing-div" (click)="openDetailPage(mellthing)">
       <div class="img-div">
         <img [src]="mellthing.image">
       </div>

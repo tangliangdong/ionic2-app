@@ -1,0 +1,54 @@
+page-loginCenter {
+  .loginCenter-content{
+
+    .logo{
+      width: 26%;
+      margin: 80px auto 50px;
+    }
+    .login-button{
+      width: 80%;
+      height: 2.8rem;
+      font-size: 1.4rem;
+      margin: 0 auto 10px;
+      border-radius: 0px;
+    }
+
+    .separator hr{
+      width: 20%;
+      display: inline-block;
+    }
+    .separator{
+      margin: 40px auto 20px;
+      text-align: center;
+      span{
+        margin: 0 5px;
+        color: rgb(117, 117, 117);
+        font-size: 1.4rem;
+      }
+    }
+    .social{
+      ion-col{
+        text-align: center;
+
+        img{
+          width: 50px;
+        }
+        p{
+          margin: 3px 0 0 0;
+        }
+      }
+    }
+  }
+
+  .footer{
+    text-align: center;
+    .button{
+      font-size: 1.2rem;
+    }
+    .toolbar-ios:first-child .toolbar-background-ios {
+      border: none;
+      background: transparent;
+    }
+  }
+
+}

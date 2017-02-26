@@ -1,0 +1,45 @@
+<ion-content class="loginCenter-content" padding>
+
+  <div class="logo">
+    <img src="assets/img/label/login-logo.png" >
+  </div>
+
+  <button ion-button block color="dark" (click)="registered()" class="login-button">
+    手机号注册
+  </button>
+  <button ion-button block outline color="dark" (click)="login()" class="login-button">
+    登录
+  </button>
+  <div class="separator">
+    <hr>
+    <span>使用其他账号登录</span>
+    <hr>
+  </div>
+  <div class="social">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-33 (click)="loginInPlatform(1)">
+          <img src="assets/img/label/qq.png" alt="">
+          <p>QQ</p>
+        </ion-col>
+        <ion-col width-33 (click)="loginInPlatform(2)">
+          <img src="assets/img/label/weichat.png" alt="">
+          <p>微信</p>
+        </ion-col>
+        <ion-col width-33 (click)="loginInPlatform(3)">
+          <img src="assets/img/label/weibo.png" alt="">
+          <p>微博</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button clear color="dark" (click)="backToHome()" icon-right>
+      稍后注册
+      <ion-icon name="ios-arrow-forward-outline" color="editbutton" ></ion-icon>
+    </button>
+  </ion-toolbar>
+
+</ion-footer>
