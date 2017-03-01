@@ -72,7 +72,7 @@
             <img [src]="recommend_item.avatar">
           </ion-avatar>
           <p class="username" ion-text color="username" [innerHTML]="recommend_item.user"></p>
-          <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
+          <button ion-button outline item-right small color="dark" class="focus-btn" (click)="focusOn()">关注</button>
         </ion-item>
 
         <p class="signature" ion-text color="dark" [innerHTML]="recommend_item.signatue"></p>
@@ -80,13 +80,13 @@
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of recommend_item.images">
             <ion-col width-33 >
-              <img [src]="row.a" tappable (click)="openLargeImage($event)">
+              <img [src]="row.a" tappable (click)="openLargeImage($event,row.a)">
             </ion-col>
             <ion-col width-33 tappable>
-              <img [src]="row.b" tappable (click)="openLargeImage($event)">
+              <img [src]="row.b" tappable (click)="openLargeImage($event,row.b)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.c" tappable (click)="openLargeImage($event)">
+              <img [src]="row.c" tappable (click)="openLargeImage($event,row.c)">
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -124,7 +124,7 @@
             <img [src]="news_item.avatar" class="community-avatar-img">
           </ion-avatar>
           <p class="username" ion-text color="username" [innerHTML]="news_item.user"></p>
-          <button ion-button outline item-right small color="dark" class="focus-btn">关注</button>
+          <button ion-button outline item-right small color="dark" class="focus-btn" (click)="focusOn()">关注</button>
         </ion-item>
 
         <p class="signature" ion-text color="dark" [innerHTML]="news_item.signatue"></p>
@@ -176,7 +176,7 @@
             <img [src]="attention_item.avatar" class="community-avatar-img">
           </ion-avatar>
           <p class="username" ion-text color="username" [innerHTML]="attention_item.user"></p>
-          <button ion-button item-right small color="dark" class="focus-btn">关注</button>
+          <button ion-button item-right small color="dark" class="focus-btn" (click)="focusOn()">关注</button>
         </ion-item>
 
         <p class="signature" ion-text color="dark" [innerHTML]="attention_item.signatue"></p>

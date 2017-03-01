@@ -23,6 +23,36 @@ page-dynamicDetail {
       }
     }
 
+    .comments-list{
+      margin: 10px 0 0 0;
+      border-top: .55px solid #e6e4e4;
+      padding-top: 2px;
+
+      .comments-list-div:first-child{
+        margin-top: 5px;
+      }
+
+      .comments-list-div{
+        padding: 0;
+        border-bottom: none;
+
+        .label{
+          margin: -10px 8px 11px 0;
+        }
+
+        button{
+          background-color: transparent;
+          color: #5c67a7;
+          font-size: 1.2rem;
+          padding-right: 0;
+        }
+        span{
+          font-size: 1.2rem
+        }
+
+      }
+    }
+
   }
 
   .shareCurtain{

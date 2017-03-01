@@ -8,6 +8,9 @@ page-home {
     // height: 40%;
   }
   .home-content{
+    .swiper-pagination-bullet-active {
+      background: white;
+    }
     .home-center-buttons{
       padding: 0;
 
@@ -28,6 +31,10 @@ page-home {
       }
 
     }
+    .card-title{
+      font-size: 14px;
+
+    }
     .card{
       // .triangle{
       //   width: .4rem;
@@ -40,10 +47,6 @@ page-home {
       //   width: 5px;
       // }
 
-      .card-title{
-        font-size: 14px;
-
-      }
 
       .card-slides{
 
@@ -55,6 +58,7 @@ page-home {
 
       .card-content{
         padding: 0px 16px 14px 16px;
+        border-bottom: 1px solid rgba(#222222, 0.1);
 
         .card-title{
           padding: 0 0 2px 0;

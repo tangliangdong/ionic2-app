@@ -59,6 +59,16 @@ export class PersonPage {
     }
   }
 
+  user = {
+    id:'',
+    username: '',
+    avatar: '',
+    signature: '',
+    commentsNum: 112,
+    attentionNum: 128,
+    fanNum: 36,
+  }
+
 
   items = [
     {

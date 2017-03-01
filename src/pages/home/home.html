@@ -50,7 +50,30 @@
     </ion-row>
   </ion-item> -->
 
-  <ion-list class="home-list">
+  <ion-card>
+    <ion-item>
+      <img src="assets/img/card/triangle.png" class="triangle" alt="">
+      <span class="card-title">展览推荐</span>
+      <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
+      <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
+    </ion-item>
+    <ion-item *ngFor="let home_card of home_cards" class="card">
+      <ion-slides class="card-slides">
+        <ion-slide *ngFor="let card of home_card.images">
+          <img [src]="card.img" class="card-image"/>
+        </ion-slide>
+      </ion-slides>
+      <ion-card-content>
+        <ion-card-title>
+          {{home_card.author}}
+        </ion-card-title>
+        <p>{{home_card.studio}} | {{home_card.place}}</p>
+        <p>{{home_card.startTime}}-{{home_card.endTime}}</p>
+      </ion-card-content>
+    </ion-item>
+  </ion-card>
+
+  <!-- <ion-list class="home-list">
     <ion-card class="card" *ngFor="let home_card of home_cards">
       <ion-item>
         <img src="assets/img/card/triangle.png" class="triangle" alt="">
@@ -71,6 +94,6 @@
         <p>{{home_card.startTime}}-{{home_card.endTime}}</p>
       </ion-card-content>
     </ion-card>
-  </ion-list>
+  </ion-list> -->
 
 </ion-content>

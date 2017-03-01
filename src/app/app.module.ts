@@ -32,6 +32,8 @@ import { AboutXunyiPage } from '../pages/aboutXunyi/aboutXunyi';
 import { ContactPage } from '../pages/contact/contact';
 import { PrivateLetterPage } from '../pages/privateLetter/privateLetter';
 import { MyTopicPage } from '../pages/myTopic/myTopic';
+import { ShowFullScreenPage } from '../pages/showFullScreen/showFullScreen';
+import { ResetPasswordPage } from '../pages/resetPassword/resetPassword';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -70,6 +72,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     ContactPage,
     PrivateLetterPage,
     MyTopicPage,
+    ShowFullScreenPage,
+    ResetPasswordPage
   ],
   imports: [
     IonicModule.forRoot(MyApp
@@ -116,6 +120,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     ContactPage,
     PrivateLetterPage,
     MyTopicPage,
+    ShowFullScreenPage,
+    ResetPasswordPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

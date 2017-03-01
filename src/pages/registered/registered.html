@@ -12,17 +12,18 @@
 </ion-header>
 <ion-content class="registered-content" padding>
   <ion-item>
-    <ion-input placeholder="手机号"></ion-input>
+    <ion-input [(ngModel)]="user.phone" placeholder="手机号"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input placeholder="密码"></ion-input>
+    <ion-input [(ngModel)]="user.password" placeholder="密码"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item class="have-read">
     <ion-label>我已阅读</ion-label>
-    <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+    <ion-checkbox [(ngModel)]="user.readed"></ion-checkbox>
   </ion-item>
 
-  <button ion-button block color="dark">下一步</button>
+  <button ion-button block color="dark" *ngIf="user.readed" (click)="next()">下一步</button>
+  <button ion-button block color="dark" *ngIf="!user.readed" (click)="next()" disabled>下一步</button>
 
   <button ion-button clear color="dark" (click)="backToLogin()">已有账号？立即登录</button>
 

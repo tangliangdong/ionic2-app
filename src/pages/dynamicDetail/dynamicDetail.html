@@ -30,6 +30,13 @@
   <div *ngFor="let img of detail.imgs">
     <img [src]="img" alt="">
   </div>
+  <!-- 用户评论 -->
+  <ion-list class="comments-list">
+    <div *ngFor="let comment of detail.comments" class="comments-list-div">
+      <button color="commentuser">{{comment.user}}：</button>
+      <span ion-text color="comment" [innerHTML]="comment.word"></span>
+    </div>
+  </ion-list>
 </ion-content>
 
 <ion-footer>
@@ -39,9 +46,7 @@
         <ion-icon name="ios-image-outline"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-searchbar>
-
-    </ion-searchbar>
+    <ion-input></ion-input>
     <ion-buttons end>
       <button ion-button clear color="dark">
         发言

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { PhotoViewer } from 'ionic-native';
 
-import { NavController,ModalController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { TopicPage } from '../topic/topic';
 import { DynamicDetailPage } from '../dynamicDetail/dynamicDetail'
@@ -16,40 +17,44 @@ export class CommunityPage {
   isAndroid: boolean = false;
 
   constructor(public navCtrl: NavController,
-            platform: Platform,
-            public modalCtrl: ModalController) {
+    platform: Platform,
+    public modalCtrl: ModalController) {
     this.isAndroid = platform.is('android');
 
 
   }
 
-  openDynamicDetailPage(item){
-    let dynamicModal = this.modalCtrl.create(DynamicDetailPage,{
+  focusOn() {
+    event.stopPropagation();
+  }
+
+  openDynamicDetailPage(item) {
+    let dynamicModal = this.modalCtrl.create(DynamicDetailPage, {
       dynamic: item
     });
     dynamicModal.present();
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     let grid = $('#list-grid ion-col');
     let gridWidth = grid.first().outerWidth();
-    for(let i = 0 ; i < grid.length ; i++ ){
-      grid.eq(i).css('height',gridWidth);
+    for (let i = 0; i < grid.length; i++) {
+      grid.eq(i).css('height', gridWidth);
     }
   }
 
-  selectedcom(){
-    $(function(){
+  selectedcom() {
+    $(function() {
       let grid = $('#list-grid ion-col');
       console.log(grid);
       let gridWidth = grid.first().outerWidth();
-      for(let i = 0 ; i < grid.length ; i++ ){
-        grid.eq(i).css('height',gridWidth);
+      for (let i = 0; i < grid.length; i++) {
+        grid.eq(i).css('height', gridWidth);
       }
     });
   }
 
-  openTopicPage(){
+  openTopicPage() {
     let topicModal = this.modalCtrl.create(TopicPage);
     topicModal.present();
   }
@@ -57,10 +62,12 @@ export class CommunityPage {
    * 点击图片查看大图
    * @return {[type]} [description]
    */
-  openLargeImage(event: Event){
+  openLargeImage(event: Event, url) {
     // 禁止事件冒泡
     event.stopPropagation();
-    console.log(event);
+    console.log(url);
+    // PhotoViewer.show('http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg');
+    PhotoViewer.show(url);
   }
 
   recommend_items = [
@@ -72,7 +79,7 @@ export class CommunityPage {
       time: '02月23日',
       images: [
         {
-          a: 'assets/img/square/IMG_3533.JPG',
+          a: 'http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg',
           b: 'assets/img/square/IMG_3534.JPG',
           c: 'assets/img/square/IMG_3535.JPG'
         },

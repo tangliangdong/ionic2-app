@@ -1,0 +1,17 @@
+page-showFullScreen {
+  .showFullScreen-header{
+    .back-button>.button-inner{
+      //color: white;
+    }
+  }
+  .showFullScreen-content {
+    height: 100%;
+    overflow: hidden;
+
+
+    .scroll-content{
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+}

@@ -23,7 +23,10 @@ export class CollectionPage {
 
   doRefresh(event){
     console.log(event);
-    event.complete();
+    setTimeout(() => {
+      event.complete();
+    }, 2000);
+
   }
 
   ionViewDidEnter(){

@@ -56,7 +56,7 @@ page-community {
   .write-btn{
     background: transparent;
     position: absolute;
-    top: 70%;
+    top: 65%;
     transform: translateY(-50%);
     z-index: 100;
     right: 7%;
@@ -64,8 +64,11 @@ page-community {
     padding: 0;
     height: auto;
 
+    width: 25px;
+    height: 25px;
+
     img{
-      width: 16px;
+      width: 20px;
     }
   }
   .write-btn.activated{
@@ -85,6 +88,9 @@ page-community {
         background: transparent;
         height: auto;
       }
+    }
+    .item.activated{
+      background: #fff;
     }
     .community-item>.item-inner{
       padding-right: 0;
@@ -193,14 +199,7 @@ page-community {
 
         }
       }
-
-
-
-
     }
-
-
-
     .news-item{
       padding: 0;
 
@@ -211,8 +210,5 @@ page-community {
         }
       }
     }
-
-
-
   }
 }

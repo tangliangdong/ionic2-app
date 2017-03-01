@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController,ModalController,ViewController,ToastController } from 'ionic-angular';
 //import * as $ from "jquery";
+import { ShowFullScreenPage } from '../showFullScreen/showFullScreen'
 
 @Component({
   selector: 'page-create',
@@ -20,7 +21,7 @@ export class CreatePage {
 
 
   chooseTemplate(item){
-    
+    this.navCtrl.push(ShowFullScreenPage);
   }
 
   doRefresh(event){

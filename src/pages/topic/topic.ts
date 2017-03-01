@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ImagePicker,Geolocation,HTTP } from 'ionic-native';
-import { NavController,ModalController,ViewController ,ToastController} from 'ionic-angular';
+import { ImagePicker, Geolocation, HTTP } from 'ionic-native';
+import { NavController, ModalController, ViewController, ToastController} from 'ionic-angular';
 import * as $ from "jquery";
 // import { AddAddressPage } from '../addAddress/addAddress';
 
@@ -13,40 +13,41 @@ export class TopicPage {
 
   placeNames: string = '';
   constructor(public navCtrl: NavController,
-              public modalCtrl: ModalController,
-              public viewCtrl: ViewController,
-              public toastCtrl: ToastController) {
+    public modalCtrl: ModalController,
+    public viewCtrl: ViewController,
+    public toastCtrl: ToastController) {
     // $('.dynamic-button').on('click', '.dynamic-button', function(event) {
     //   event.preventDefault();
     //   console.log(111);
     // });
   }
 
-  location(){
+  location() {
     Geolocation.getCurrentPosition().then((resp) => {
-     // resp.coords.latitude
-     // resp.coords.longitude
-       console.log('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location='+Math.abs(resp.coords.longitude)+','+resp.coords.latitude+'&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0')
-       HTTP.post('https://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location='+Math.abs(resp.coords.longitude)+','+resp.coords.latitude+'&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0', {}, {})
-      .then(data => {
-        console.log(data.data.regeocodes[0].formatted_address);
-         $('#placeName').text(data.data.regeocodes[0].formatted_address);
-         $('#placeName').text(resp.coords.longitude+","+resp.coords.latitude);
-        console.log(data.status);
-        console.log(data.data);
-        console.log(data.headers);
-      })
-      .catch(error => {
+      // resp.coords.latitude
+      // resp.coords.longitude
+      console.log('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' +resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0')
 
-      });
-     console.log(resp.coords.latitude);
-     console.log(resp.coords.longitude);
+      HTTP.get('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' + resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0', {}, {})
+        .then(data => {
+          console.log(data.data.regeocodes[0].formatted_address);
+          $('#placeName').text(data.data.regeocodes[0].formatted_address);
+          $('#placeName').text(resp.coords.longitude + "," + resp.coords.latitude);
+          console.log(data.status);
+          console.log(data.data);
+          console.log(data.headers);
+        })
+        .catch(error => {
+
+        });
+      console.log(resp.coords.latitude);
+      console.log(resp.coords.longitude);
     }).catch((error) => {
       console.log('Error getting location', error);
     });
   }
 
-  sendTopic(){
+  sendTopic() {
     let sendToast = this.toastCtrl.create({
       message: '话题描述不能为空',
       duration: 2000,
@@ -61,7 +62,7 @@ export class TopicPage {
 
   user;
 
-  uploadImg(){
+  uploadImg() {
     let options = {
       maximumImagesCount: 2,
       width: 1000,
@@ -73,9 +74,9 @@ export class TopicPage {
       this.user = [];
       console.log(results);
       for (let i = 0; i < results.length; i++) {
-          this.userinfo.img = results[i];
-          console.log(this.userinfo);
-          this.user.push(results[i]);
+        this.userinfo.img = results[i];
+        console.log(this.userinfo);
+        this.user.push(results[i]);
       }
       console.log(this.user);
       //this.userinfo.img = results[0];
@@ -92,50 +93,50 @@ export class TopicPage {
   //   });
   // }
 
-  unfold(){
-    $(function(){
+  unfold() {
+    $(function() {
       let button = $('#unfold-button');
-      if(button.children('span').text().trim()=='展开'){
+      if (button.children('span').text().trim() == '展开') {
         // button.children('.button-inner>.icon').addClass('ion-ios-arrow-up-outline');
         // button.children('.button-inner>.icon:before').css('content', "\f3d8");
         button.children('span').text('收起');
-        $('#label-area').css('height','auto');
+        $('#label-area').css('height', 'auto');
 
-      }else{
+      } else {
         // button.children('.button-inner>.icon').addClass('ion-ios-arrow-down-outline');
         // button.children('.button-inner>.icon:before').css('content', '\f3d0');
         button.children('span').text('展开');
-        $('#label-area').css('height','40');
+        $('#label-area').css('height', '40');
       }
     });
   }
 
   choose_list = [];
 
-  itemSelected(item){
+  itemSelected(item) {
     this.choose_list.push(item);
     $('#label-area').children('.label-button').each(function(index, el) {
       console.log($(this).children('span').children('span').eq(0).text());
-      if($(this).children('span').children('span').eq(0).text()==item.id){
+      if ($(this).children('span').children('span').eq(0).text() == item.id) {
         $(this).remove();
         return false;
       }
     });
     console.log(this.choose_list);
-    $('#choose_label').append('<button class="label-button dynamic-button disable-hover button button-ios button-outline button-outline-ios button-outline-ios-editbutton item-button" color="editbutton" ion-button="" outline="" tappable="" ng-reflect-color="editbutton" data="'+item.id+'"><span class="button-inner">'+
-        item.word+
-      '</span><div'+ 'class="button-effect"></div></button>');
+    $('#choose_label').append('<button class="label-button dynamic-button disable-hover button button-ios button-outline button-outline-ios button-outline-ios-editbutton item-button" color="editbutton" ion-button="" outline="" tappable="" ng-reflect-color="editbutton" data="' + item.id + '"><span class="button-inner">' +
+      item.word +
+      '</span><div' + 'class="button-effect"></div></button>');
   }
 
-  cancelLabel(id){
+  cancelLabel(id) {
     console.log(id);
   }
 
-  backToHome(){
+  backToHome() {
     this.viewCtrl.dismiss();
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     // $('.searchbar-input').focus();
   }
 
