@@ -1,0 +1,13 @@
+page-bigImg {
+  .bigImg-content{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+    }
+  }
+}

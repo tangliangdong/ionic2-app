@@ -132,13 +132,13 @@
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of news_item.images">
             <ion-col width-33>
-              <img [src]="row.a" tappable (click)="openLargeImage($event)">
+              <img [src]="row.a" tappable (click)="openLargeImage($event,row.a)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.b" tappable (click)="openLargeImage($event)">
+              <img [src]="row.b" tappable (click)="openLargeImage($event,row.b)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.c" tappable (click)="openLargeImage($event)">
+              <img [src]="row.c" tappable (click)="openLargeImage($event,row.c)">
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -184,13 +184,13 @@
         <ion-grid class="list-grid" id="list-grid">
           <ion-row *ngFor="let row of attention_item.images">
             <ion-col width-33>
-              <img [src]="row.a" tappable (click)="openLargeImage($event)">
+              <img [src]="row.a" tappable (click)="openLargeImage($event,row.a)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.b" tappable (click)="openLargeImage($event)">
+              <img [src]="row.b" tappable (click)="openLargeImage($event,row.b)">
             </ion-col>
             <ion-col width-33>
-              <img [src]="row.c" tappable (click)="openLargeImage($event)">
+              <img [src]="row.c" tappable (click)="openLargeImage($event,row.c)">
             </ion-col>
           </ion-row>
         </ion-grid>

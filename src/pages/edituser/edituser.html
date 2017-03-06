@@ -1,4 +1,4 @@
-<ion-header class="edituser-header">
+onci-noisnoci-inoi<ion-header class="edituser-header">
   <ion-toolbar>
     <ion-buttons start>
       <button ion-button color="dark" (click)="backToHome()">
@@ -14,21 +14,40 @@
 
 <ion-content class="edituser-content">
   <ion-avatar>
-    <img src="assets/img/avatar/lannuan.png" alt="" class="user-avatar">
+    <img [src]="detail.avatar" class="user-avatar" tappable (click)="changeImg()">
   </ion-avatar>
   <p class="edit-img-word">修改图像</p>
   <ion-list>
     <ion-item>
       <ion-label>名字</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="detail.username"></ion-input>
     </ion-item>
+
+    <ion-item class="sex-item">
+      <span class="sex-word">性别</span>
+      <button ion-button clear icon-left class="sex-button" [class.sex-selected]="isMan" color="dark" (click)="selected(1,$event)" id="boy">
+        <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+        男
+      </button>
+      <button ion-button clear ion-left class="sex-button" [class.sex-selected]="!isMan" color="dark" (click)="selected(2,$event)" id="girl">
+        <ion-icon name="ios-checkmark-circle-outline"></ion-icon>女
+      </button>
+    </ion-item>
+    <!-- <ion-item class="sex-item" *ngIf="detail.sex==0">
+      <span class="sex-word">性别</span>
+      <button ion-button clear icon-left class="sex-button" color="dark" (click)="selected(1,$event)" id="boy">
+        <ion-icon name="ios-checkmark-circle-outline"></ion-icon>
+        男
+      </button>
+      <button ion-button clear ion-left class="sex-button sex-selected" color="dark" (click)="selected(2,$event)" id="girl">
+        <ion-icon name="ios-checkmark-circle-outline"></ion-icon>女
+      </button>
+    </ion-item> -->
+
     <ion-item>
-      <ion-label>性别</ion-label>
+      <ion-textarea clearInput="true" placeholder="请用帅气的40个字介绍自己吧！" class="textarea" [(ngModel)]="detail.signature"></ion-textarea>
     </ion-item>
-    <ion-item>
-      <ion-textarea clearInput="true" placeholder="请用帅气的40个字介绍自己吧！" class="textarea"></ion-textarea>
-    </ion-item>
-    <button ion-button color="dark" block class="save-button">
+    <button ion-button color="dark" block class="save-button" (click)="save()">
       保存
     </button>
   </ion-list>

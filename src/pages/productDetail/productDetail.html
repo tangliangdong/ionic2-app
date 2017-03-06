@@ -4,7 +4,7 @@
       <ion-icon name="ios-arrow-back-outline"></ion-icon>
     </button>
   </ion-fab>
-  <div class="image-text">
+  <div class="image-text" (click)="openLargeImage($event,product.image)">
     <img [src]="product.image" alt="">
   </div>
   <div class="product-name">

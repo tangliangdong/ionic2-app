@@ -5,6 +5,8 @@ import { NavController, ModalController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { TopicPage } from '../topic/topic';
 import { DynamicDetailPage } from '../dynamicDetail/dynamicDetail'
+import { BigImgPage } from '../bigImg/bigImg'
+
 
 import * as $ from "jquery";
 @Component({
@@ -66,8 +68,11 @@ export class CommunityPage {
     // 禁止事件冒泡
     event.stopPropagation();
     console.log(url);
+    let imgModal = this.modalCtrl.create(BigImgPage,
+    {img:url});
+    imgModal.present();
     // PhotoViewer.show('http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg');
-    PhotoViewer.show(url);
+    //PhotoViewer.show(url);
   }
 
   recommend_items = [
@@ -79,7 +84,7 @@ export class CommunityPage {
       time: '02月23日',
       images: [
         {
-          a: 'http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg',
+          a: 'assets/img/square/IMG_3534.JPG',
           b: 'assets/img/square/IMG_3534.JPG',
           c: 'assets/img/square/IMG_3535.JPG'
         },

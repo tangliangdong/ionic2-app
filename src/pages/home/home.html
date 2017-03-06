@@ -57,7 +57,7 @@
       <img src="assets/img/card/MORE.png" alt="" class="MORE" item-right>
       <img src="assets/img/card/miniTriangle.png" alt="" class="miniTriangle" item-right>
     </ion-item>
-    <ion-item *ngFor="let home_card of home_cards" class="card">
+    <ion-item *ngFor="let home_card of home_cards;trackBy:trackingList" (click)="openHtml5()" class="card">
       <ion-slides class="card-slides">
         <ion-slide *ngFor="let card of home_card.images">
           <img [src]="card.img" class="card-image"/>

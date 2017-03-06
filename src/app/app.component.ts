@@ -9,10 +9,15 @@ import { LoginCenterPage } from '../pages/loginCenter/loginCenter';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = LoginCenterPage;
+  rootPage :any;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
+      if(localStorage.getItem('username')==null){
+        this.rootPage = LoginCenterPage;
+      }else{
+        this.rootPage = TabsPage;
+      }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       localStorage.setItem('first','1');

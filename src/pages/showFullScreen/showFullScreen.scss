@@ -5,13 +5,150 @@ page-showFullScreen {
     }
   }
   .showFullScreen-content {
-    height: 100%;
     overflow: hidden;
 
 
     .scroll-content{
       overflow: hidden;
+    }
+    .framePage{
+      width: 100%;
       height: 100%;
+    }
+
+    .sections {
+      transition: 1s;
+
+      .section1 {
+        background-color: rgb(195, 196, 194);
+        position: relative;
+
+        .row1 {
+          height: 30%;
+        }
+
+        .row2 {
+          height: 70%;
+        }
+
+        .col1 {
+          height: 100%;
+          width: 8%;
+          float: left;
+        }
+        .row2 > .col2 {
+          position: relative;
+          background: transparent;
+        }
+        .hr1 {
+          width: 2px;
+          // height: 100%;
+          background-color: white;
+          position: absolute;
+          left: 8%;
+          z-index: 10;
+          transition: .5s;
+        }
+
+        .hr2 {
+          // width: 100%;
+          height: 2px;
+          color: white;
+          background-color: white;
+          position: absolute;
+          top: 30%;
+          z-index: 10;
+          transition: .5s;
+        }
+
+        .hr1-animate{
+          height: 100%;
+        }
+
+        .hr2-animate{
+          width: 100%;
+
+        }
+
+        .col2 {
+          height: 100%;
+          width: 92%;
+          float: left;
+        }
+
+        h4 {
+          text-align: right;
+          // margin-top: 50px;
+          width: 95%;
+          font-size: 2.4rem;
+          opacity: 0;
+          transition: 1s;
+        }
+        .h4-animate{
+          margin-top: 50px;
+          opacity: 1;
+        }
+
+        p {
+          font-size: 1.6rem;
+          width: 95%;
+          transform: translateY(-100%);
+          text-align: right;
+          opacity: 0;
+        }
+
+        .p-animate{
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .img1 {
+          width: 70%;
+          position: absolute;
+          top: -2px;
+          left: -10px;
+          transition: 0.8s;
+          transform: rotateY(90deg);
+        }
+
+        .img2 {
+          transition: .8s;
+          width: 30%;
+          margin: 50% 0 0 60%;
+          z-index: 100;
+          transform: rotateY(90deg);
+        }
+
+        .img-rotate {
+          animation:imgRotate 2s;
+          transform: rotateY(0);
+        }
+
+
+
+      }
+    }
+    .container,
+    .section,
+    .sections {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @keyframes imgRotate {
+    0% {
+      transform: rotateY(-120deg);
+    }
+
+    70% {
+      transform: rotateY(40deg);
+    }
+    80% {
+      transform: rotateY(20deg);
+    }
+    90% {
+      transform: rotateY(10deg);
     }
   }
 }

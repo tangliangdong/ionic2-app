@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { ImagePicker, Geolocation, HTTP } from 'ionic-native';
+import { ImagePicker, Geolocation,HTTP } from 'ionic-native';
+import { Http } from '@angular/http';
 import { NavController, ModalController, ViewController, ToastController} from 'ionic-angular';
 import * as $ from "jquery";
+import { HttpService } from "../service/HomeService"
 // import { AddAddressPage } from '../addAddress/addAddress';
 
 @Component({
@@ -11,7 +13,7 @@ import * as $ from "jquery";
 
 export class TopicPage {
 
-  placeNames: string = '';
+  placeNames;
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     public viewCtrl: ViewController,
@@ -23,28 +25,54 @@ export class TopicPage {
   }
 
   location() {
+    let longitude,
+        latitude;
     Geolocation.getCurrentPosition().then((resp) => {
+      longitude = resp.coords.longitude;
+      latitude = resp.coords.latitude;
+
+      // HTTP.get("http://restapi.amap.com/v3/geocode/regeo", {
+      //     key: '6f7fc8159b395bc68e95c894916531f8',
+      //     location: longitude+','+latitude,
+      //     poitype: '',
+      //     radius: 3000,
+      //     extensions: 'base',
+      //     batch: true,
+      //     roadlevel: 0
+      // }, { Authorization: "OAuth2: token" }, function(response) {
+      //     console.log(response.status);
+      //     console.log(response);
+      // }, function(response) {
+      //     console.error(response.error);
+      // });
+
+
       // resp.coords.latitude
       // resp.coords.longitude
-      console.log('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' +resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0')
 
-      HTTP.get('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' + resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0', {}, {})
-        .then(data => {
-          console.log(data.data.regeocodes[0].formatted_address);
-          $('#placeName').text(data.data.regeocodes[0].formatted_address);
-          $('#placeName').text(resp.coords.longitude + "," + resp.coords.latitude);
-          console.log(data.status);
-          console.log(data.data);
-          console.log(data.headers);
-        })
-        .catch(error => {
-
-        });
+      // let body = 'key=6f7fc8159b395bc68e95c894916531f8&location=' + resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0';
+      console.log('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' +resp.coords.longitude + ',' + resp.coords.latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0');
+      // console.log(this.http.get('http://restapi.amap.com/v3/geocode/regeo', {body}));
       console.log(resp.coords.latitude);
       console.log(resp.coords.longitude);
     }).catch((error) => {
       console.log('Error getting location', error);
     });
+
+    HTTP.get('http://restapi.amap.com/v3/geocode/regeo?key=6f7fc8159b395bc68e95c894916531f8&location=' +longitude + ',' + latitude + '&poitype=&radius=3000&extensions=base&batch=true&roadlevel=0', {}, {})
+    .then(data => {
+      //this.placeNames = data;
+      //console.log(data.regeocodes[0].formatted_address);
+      console.log(data);
+      //console.log(1111111)
+      console.log(data.data); // data received by server
+
+    })
+    .catch(error => {
+
+      console.log(error.error); // error message as string
+    });
+
   }
 
   sendTopic() {

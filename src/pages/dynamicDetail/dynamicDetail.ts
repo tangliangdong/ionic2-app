@@ -4,6 +4,8 @@ import { ImagePicker } from 'ionic-native';
 import { NavController, ModalController, ViewController, NavParams, PopoverController,AlertController} from 'ionic-angular';
 import * as $ from "jquery";
 
+import { BigImgPage } from '../bigImg/bigImg';
+
 @Component({
   selector: 'page-dynamicDetail',
   templateUrl: 'dynamicDetail.html'
@@ -33,6 +35,17 @@ export class DynamicDetailPage {
     }, 400, function() {
       $('#shareCurtain').css('z-index', 0);
     });
+  }
+
+  openLargeImage(event: Event, url) {
+    // 禁止事件冒泡
+    event.stopPropagation();
+    console.log(url);
+    let imgModal = this.modalCtrl.create(BigImgPage,
+    {img:url});
+    imgModal.present();
+    // PhotoViewer.show('http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg');
+    //PhotoViewer.show(url);
   }
 
   /**

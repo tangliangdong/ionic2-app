@@ -34,8 +34,12 @@ import { PrivateLetterPage } from '../pages/privateLetter/privateLetter';
 import { MyTopicPage } from '../pages/myTopic/myTopic';
 import { ShowFullScreenPage } from '../pages/showFullScreen/showFullScreen';
 import { ResetPasswordPage } from '../pages/resetPassword/resetPassword';
+import { BigImgPage } from '../pages/bigImg/bigImg';
+import { Html5Page } from '../pages/html5/html5';
+import { TryOutPage } from '../pages/tryOut/tryOut';
 
 import { TabsPage } from '../pages/tabs/tabs';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +77,10 @@ import { TabsPage } from '../pages/tabs/tabs';
     PrivateLetterPage,
     MyTopicPage,
     ShowFullScreenPage,
-    ResetPasswordPage
+    ResetPasswordPage,
+    BigImgPage,
+    Html5Page,
+    TryOutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp
@@ -121,7 +128,10 @@ import { TabsPage } from '../pages/tabs/tabs';
     PrivateLetterPage,
     MyTopicPage,
     ShowFullScreenPage,
-    ResetPasswordPage
+    ResetPasswordPage,
+    BigImgPage,
+    Html5Page,
+    TryOutPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -9,7 +9,7 @@ import { CollectionPage } from '../collection/collection';
 import { SettingPage } from '../setting/setting';
 import { PrivateLetterPage } from '../privateLetter/privateLetter';
 import { MyTopicPage } from '../myTopic/myTopic';
-
+import { BigImgPage } from '../bigImg/bigImg';
 
 @Component({
   selector: 'page-person',
@@ -22,9 +22,32 @@ export class PersonPage {
 
   }
 
-  openEditUser() {
-    let editUserModal = this.modalCtrl.create(EditUserPage);
+/**
+ * 编辑用户信息
+ * @return {[type]} [description]
+ */
+  openEditUser(information) {
+    let editUserModal = this.modalCtrl.create(EditUserPage,{
+      user: information
+    });
     editUserModal.present();
+  }
+
+/**
+ * 点击查看大图
+ * @param  {Event}  event [description]
+ * @param  {[type]} url   [description]
+ * @return {[type]}       [description]
+ */
+  openLargeImage(event: Event, url) {
+    // 禁止事件冒泡
+    event.stopPropagation();
+    console.log(url);
+    let imgModal = this.modalCtrl.create(BigImgPage,
+    {img:url});
+    imgModal.present();
+    // PhotoViewer.show('http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg');
+    //PhotoViewer.show(url);
   }
 
   openPage(item) {
@@ -60,15 +83,16 @@ export class PersonPage {
   }
 
   user = {
-    id:'',
-    username: '',
-    avatar: '',
+    id: 1,
+    sex: 1,
+    username: '蓝色一只雕',
+    avatar: 'assets/img/avatar/lanseyizhidiao.png',
     signature: '',
     commentsNum: 112,
     attentionNum: 128,
     fanNum: 36,
-  }
 
+  }
 
   items = [
     {

@@ -7,37 +7,37 @@
 <ion-content class="person-content">
   <ion-item class="about-item">
     <ion-item class="about-me">
-      <ion-avatar class="user-avatar" item-left>
-        <img src="assets/img/avatar/lanseyizhidiao.png" alt="">
+      <ion-avatar class="user-avatar" tappable  (click)="openLargeImage($event,user.avatar)" item-left>
+        <img [src]="user.avatar">
       </ion-avatar>
       <ion-item item-right>
         <ion-grid class="three-message">
           <ion-row>
             <ion-col width-33>
               <div>
-                <p>112</p>
+                <p>{{user.commentsNum}}</p>
                 <p>评论</p>
               </div>
             </ion-col>
             <ion-col width-33>
               <div>
-                <p>128</p>
+                <p>{{user.attentionNum}}</p>
                 <p>关注</p>
               </div>
             </ion-col>
             <ion-col width-33>
               <div>
-                <p>36</p>
+                <p>{{user.fanNum}}</p>
                 <p>粉丝</p>
               </div>
             </ion-col>
           </ion-row>
         </ion-grid>
 
-        <button ion-button outline color="editbutton" block class="edit-btn" (click)="openEditUser()">编辑个人资料</button>
+        <button ion-button outline color="editbutton" block class="edit-btn" (click)="openEditUser(user)">编辑个人资料</button>
       </ion-item>
     </ion-item>
-    <p class="nickname">蓝色一只雕</p>
+    <p class="nickname">{{user.username}}</p>
   </ion-item>
   <ion-list class="person-list">
     <ion-item *ngFor="let item of items" class="list-item" (click)="openPage(item)">

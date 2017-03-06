@@ -27,7 +27,7 @@
     </button>
   </ion-item>
   <p>{{detail.signature}}</p>
-  <div *ngFor="let img of detail.imgs">
+  <div *ngFor="let img of detail.imgs" (click)="openLargeImage($event,img)">
     <img [src]="img" alt="">
   </div>
   <!-- 用户评论 -->

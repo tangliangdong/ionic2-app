@@ -1,0 +1,17 @@
+<!-- <ion-header class="bigImg-header">
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button color="dark" (click)="backToHome()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      定制
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="bigImg-content" tappable (click)="backToHome()" (press)="holdLongTime()">
+  <img [src]="img">
+</ion-content>
